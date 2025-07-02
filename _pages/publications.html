@@ -1,0 +1,70 @@
+---
+title: "Publications"
+layout: default
+excerpt: "RT2 Lab -- Publications."
+sitemap: false
+permalink: /publications/
+---
+
+<h1>{{page.title}}</h1>
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+
+    {% for publi in site.data.publications %}
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapse{{forloop.index}}"
+               style="color: inherit;">
+         <!-- authors-APA format -->
+        {% assign formatted_authors = "" | split:"/" %}
+        {% for author in publi.author %}
+        {% assign initials = "" %}
+        {% for name in author.given | split: " " %}
+            {% assign initials = initials | append: name | slice: 0 | append: ". " %}
+        {% endfor %}
+        {% assign full_name = author.family | append: ", " | append: initials | strip %}
+        {% assign formatted_authors = formatted_authors | push: full_name %}
+        {% endfor %}
+
+        {% assign num_authors = formatted_authors | size %}
+        {% if num_authors > 1 %}
+        {% assign last_author = formatted_authors | last %}
+        {% assign authors_except_last = formatted_authors | slice: 0, num_authors | pop %}
+        {{ authors_except_last | join: ", " }}, & {{ last_author }}
+        {% else %}
+        {{ formatted_authors | first }}
+        {% endif %}
+
+        <!-- year -->
+        {% assign year = publi.issued["date-parts"] | first | first %}
+        ({{ year }}).
+
+        <!-- title (sentence case, no quotes, no italics) -->
+        {{ publi.title | downcase | capitalize }}.
+
+        <!-- journal name (italic) -->
+        <b>{{ publi.container-title }}</b>
+
+        <!-- volume(issue), pages -->
+        {% if publi.volume %}<i>{{ publi.volume }}</i>{% endif %}{% if publi.issue %}({{ publi.issue }}){% endif %}{% if publi.page %}, {{ publi.page }}.{% else %}.{% endif %}
+
+        <!-- DOI -->
+        {% if publi.DOI %}
+        <a href="https://doi.org/{{ publi.DOI }}">https://doi.org/{{ publi.DOI }}</a>
+        {% endif %}
+
+            </a>
+        </div>
+
+        <div id="collapse{{forloop.index}}" class="panel-collapse collapse">
+            <div class="panel-body">
+                <p>{{ publi.abstract }}</p>
+
+                <a class="btn btn-outline-primary" href="https://doi.org/{{publi.DOI}}"
+                   role="button" target="blank">Link</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
