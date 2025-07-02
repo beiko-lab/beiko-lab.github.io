@@ -15,7 +15,7 @@ layout: default
 		
 		<!-- Items -->
 
-		<!--
+		{% comment %}
 		<div class="carousel-inner" markdown="0">
 			<div class="item active">
 				<img src="{{ site.url }}{{ site.baseurl }}/images/slider/arete-image.png" alt="Slide 1" />
@@ -27,8 +27,8 @@ layout: default
 				<img src="{{ site.url }}{{ site.baseurl }}/images/slider/arete-image.png" alt="Slide 2" />
 			</div>
 		</div>
-
-		-->
+		{% comment %}
+		
 		<ul>
 		  {% for file in site.static_files %}
 		    <li>{{ file.path }}</li>
