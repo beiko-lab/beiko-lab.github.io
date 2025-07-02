@@ -27,7 +27,12 @@ layout: default
 		</div>
 
 		-->
-		
+		<ul>
+		  {% for file in site.static_files %}
+		    <li>{{ file.path }}</li>
+		  {% endfor %}
+		</ul>
+
 		<div class="carousel-inner" markdown="0">
 			{% assign slider_images = site.static_files | where: "path", "/images/slider" %}
 			{% assign sorted_slider_images = slider_images | sort: "name" %}
