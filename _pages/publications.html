@@ -61,6 +61,10 @@ permalink: /publications/
             </a>
         </div>
 
+        {% if publi.summary %}
+          <p>{{ publi.summary }}</p>
+        {% endif %}
+
         <div id="collapse{{forloop.index}}" class="panel-collapse collapse">
             <div class="panel-body">
                 <p>{{ publi.abstract }}</p>
