@@ -8,11 +8,11 @@ permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/
     linkedin: https://www.linkedin.com/
-    google-scholar: https://scholar.google.fr/
-    github: https://github.com/
+    google-scholar: https://scholar.google.ca/citations?user=OmUy3vUAAAAJ&hl=en&oi=ao
+    github: https://github.com/rbeiko
     website:
     orcid: https://orcid.org/
-    research-gate: https://www.researchgate.net/
+    # research-gate: https://www.researchgate.net/
 education:
  - PhD - University of Ottawa (2003)
  - BSc - Dalhousie University (1998)
