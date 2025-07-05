@@ -4,7 +4,8 @@ category: pi
 title: Robert Beiko
 image: rob.png
 role: |
-  Principal Investigator, Director, CBH Atlantic  
+  Principal Investigator
+  Director, CBH Atlantic  
   Professor, Dalhousie University  
   Co-founder and Director of Data, Dartmouth Ocean Technologies
 permalink: 'team/researcher-name'
