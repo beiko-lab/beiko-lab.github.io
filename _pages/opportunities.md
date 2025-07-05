@@ -1,9 +1,9 @@
 ---
-title: "Vacancies"
+title: "opportunities"
 layout: default
 excerpt: "Openings"
 sitemap: false
-permalink: /vacancies
+permalink: /opportunities
 ---
 
 No Vacancies
