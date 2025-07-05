@@ -8,7 +8,7 @@ role: |
   Director, CBH Atlantic  
   Professor, Dalhousie University  
   Co-founder and Director of Data, Dartmouth Ocean Technologies
-permalink: 'team/researcher-name'
+permalink: 'team/beiko'
 social:
     twitter: https://twitter.com/
     linkedin: https://www.linkedin.com/
