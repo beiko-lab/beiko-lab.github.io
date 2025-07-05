@@ -1,7 +1,7 @@
 ---
 title: "opportunities"
 layout: default
-excerpt: "Openings"
+excerpt: "Opportunities"
 sitemap: false
 permalink: /opportunities
 ---
