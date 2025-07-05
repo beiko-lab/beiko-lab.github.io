@@ -1,6 +1,6 @@
 ---
 layout: member
-category: staff
+category: pi
 title: Robert Beiko
 image: rob.png
 role: Principal Investigator
