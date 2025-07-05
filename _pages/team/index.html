@@ -30,7 +30,8 @@ permalink: /team/
                         {{ member.title }}
                     </a>
                 </h4>
-                <p class="card-text">{{ member.role | newline_to_br}}</p>
+                <p class="card-text">  {{ member.role | split: '\n' | first }}</p>
+                
             </div>
         </div>
     </div>
