@@ -30,7 +30,9 @@ permalink: /team/
                         {{ member.title }}
                     </a>
                 </h4>
-                <p class="card-text">  {{ member.role | split: '\n' | first }}</p>
+                {% assign role_lines = member.role | newline_to_br | split: '<br />' %}
+<p class="card-text">{{ role_lines[0] }}</p>  {# only the first line #}
+                <!-- <p class="card-text">  {{ member.role | split: '\n' | first }}</p> -->
                 
             </div>
         </div>
