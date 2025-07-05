@@ -2,7 +2,7 @@
 layout: member
 category: staff
 title: Robert Beiko
-image: researcher.png
+image: rob.png
 role: Principal Investigator
 permalink: 'team/researcher-name'
 social:
