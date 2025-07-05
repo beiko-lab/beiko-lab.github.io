@@ -7,8 +7,8 @@ role: PhD Student
 permalink: 'team/soma'
 social:
     twitter: https://twitter.com/
-    linkedin: https://www.linkedin.com/
-    google-scholar: https://scholar.google.fr/
+    linkedin: https://www.linkedin.com/in/soma-barawi
+    google-scholar: https://blogs.dal.ca/openthink/author/somabarawi/
     github: https://github.com/
     website:
     orcid: https://orcid.org/

@@ -7,11 +7,11 @@ role: PhD Student
 permalink: 'team/bonface'
 social:
     twitter: https://twitter.com/
-    linkedin: https://www.linkedin.com/
-    google-scholar: https://scholar.google.fr/
-    github: https://github.com/
+    linkedin: https://www.linkedin.com/in/bonface-onyango-927145161/
+    google-scholar: https://scholar.google.ca/citations?user=iXFHiXYAAAAJ&hl=en
+    github: https://github.com/bonfaceonyango
     website:
-    orcid: https://orcid.org/
+    orcid: https://orcid.org/0000-0002-9360-3788
     research-gate: https://www.researchgate.net/
 education:
  - Interdisciplinary PhD student (Started Sep. 2024)

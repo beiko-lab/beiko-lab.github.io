@@ -7,9 +7,9 @@ role: Masters Student
 permalink: 'team/jason'
 social:
     twitter: https://twitter.com/
-    linkedin: https://www.linkedin.com/
+    linkedin: https://www.linkedin.com/in/jason-d-shao/
     google-scholar: https://scholar.google.fr/
-    github: https://github.com/
+    github: https://github.com/Tassadaar
     website:
     orcid: https://orcid.org/
     research-gate: https://www.researchgate.net/

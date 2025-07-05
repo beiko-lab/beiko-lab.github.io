@@ -8,7 +8,7 @@ permalink: 'team/mohamed'
 social:
     twitter: https://twitter.com/
     linkedin: https://www.linkedin.com/
-    google-scholar: https://scholar.google.fr/
+    google-scholar: https://scholar.google.com.eg/citations?user=S0wV9PEAAAAJ&hl=en
     github: https://github.com/
     website:
     orcid: https://orcid.org/

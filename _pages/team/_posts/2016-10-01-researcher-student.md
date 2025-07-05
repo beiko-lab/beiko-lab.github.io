@@ -7,9 +7,9 @@ role: PhD Student
 permalink: 'team/diana'
 social:
     twitter: https://twitter.com/
-    linkedin: https://www.linkedin.com/
-    google-scholar: https://scholar.google.fr/
-    github: https://github.com/
+    linkedin: www.linkedin.com/in/diana-haider
+    google-scholar: https://scholar.google.ca/citations?user=Z1UeihkAAAAJ&hl=en
+    github:  https://github.com/dianahaider
     website:
     orcid: https://orcid.org/
     research-gate: https://www.researchgate.net/

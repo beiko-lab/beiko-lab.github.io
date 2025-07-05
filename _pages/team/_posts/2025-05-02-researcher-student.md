@@ -7,9 +7,9 @@ role: PhD Student
 permalink: 'team/sneha'
 social:
     twitter: https://twitter.com/
-    linkedin: https://www.linkedin.com/
-    google-scholar: https://scholar.google.fr/
-    github: https://github.com/
+    linkedin: https://www.linkedin.com/in/sneha-surya-narayana-murthy-1ab245106/
+    google-scholar: https://scholar.google.com/citations?user=ikGzO88AAAAJ&hl=en
+    github: https://github.com/snehamurthy21/
     website:
     orcid: https://orcid.org/
     research-gate: https://www.researchgate.net/
