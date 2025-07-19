@@ -100,31 +100,51 @@ permalink: /team/
 {% endfor %}
 
 <h2><a id="student"></a>Past Members</h2>
-<h3><a id="student"></a>Postdoctoral Fellows</h3>
-{% assign members = site.posts | where: 'category', 'past' | sort: 'date' %}
-{% for member in members %}
-<div class="card team-member-card">
-    <div class="row mt-3">
-        <div class="col-md-2">
-            <a href={{member.url}}>
-                <img src="{{ site.url }}{{ site.baseurl }}/images/team/{{ member.image }}"
-                    class="card-img img-responsive img-thumbnail"
-                    style="max-width: 100px;"/>
-            </a>
-        </div>
+<h3>Postdoctoral Fellows</h3>
+<ul>
+  <li>Jeremy Koenig</li>
+  <li>Morgan Langille &lt;morgan.g.i.langille[at]dal.ca&gt;</li>
+  <li>Conor Meehan &lt;cmeehan[at]itg.be&gt;</li>
+</ul>
 
-        <div class="col-md-10">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <a href="{{ member.url }}" style="text-decoration: none; color:rgb(16, 158, 240);">
-                        {{ member.title }}
-                    </a>
-                </h4>
-                <p class="card-text">{{ member.role }}</p>
-            </div>
-        </div>
-    </div>
-</div>
+<h3>Graduate Students (with completed Degrees)</h3>
+<ul>
+  <li>Emma Sylvester MSc</li>
+  <li>Mike Hall MSc</li>
+  <li>Catherine Zhan MCS</li>
+  <li>Jessie Ning MCS</li>
+  <li>Alex Keddy MCS</li>
+  <li>Scott Perry MSc &lt;perry[at]cs.dal.ca&gt;</li>
+  <li>Donovan Parks PhD &lt;donovan.parks[at]gmail.com&gt;</li>
+  <li>Sylvia de la Ronde MSc &lt;sylchu[at]hotmail.com&gt;</li>
+  <li>Robert Eveleigh MSc &lt;rb821606[at]dal.ca&gt;</li>
+  <li>Mike Porter MCS &lt;porter.mike[at]gmail.com&gt;</li>
+  <li>Christopher Smith MCS</li>
+</ul>
 
-{% endfor %}
+<h3>Undergraduate Students</h3>
+<ul>
+  <li>Samantha Babin</li>
+  <li>Catherine Holloway</li>
+  <li>Brett O’Donnell</li>
+  <li>Joel Navarrete</li>
+  <li>Adam Schofield</li>
+  <li>Suwen Wang</li>
+</ul>
 
+<h3>Technicians and Developers</h3>
+<ul>
+  <li>Nehil Jain</li>
+  <li>Harman Clair</li>
+  <li>Somayyeh Zangooei</li>
+  <li>Kathryn Dunphy</li>
+  <li>Timothy Mankowski</li>
+</ul>
+
+<h3>Visiting Students</h3>
+<ul>
+  <li>Helena Balabin (Freiburg, Germany)</li>
+  <li>Carina Haupt (Bonn, Germany)</li>
+  <li>Sebastian Ginzel (Bonn, Germany)</li>
+  <li>Sohta Ishikawa (Tsukuba, Japan)</li>
+</ul>
