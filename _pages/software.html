@@ -5,96 +5,105 @@ excerpt: "Beiko Lab: Software developed for evolutionary and microbial research"
 sitemap: true
 permalink: /software/
 ---
-<h1></h1>
-<h1>{{page.title}}</h1>
+<h1>{{ page.title }}</h1>
 
-<!-- Principal-investigator -->
+<style>
+    .software-card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 0;
+        margin-bottom: 2rem;
+        background-color: #f9f9f9;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
 
-<h2><a id="pi"></a>Principal Investigator</h2>
-{% assign members = site.posts | where: 'category', 'pi' | sort: 'date' %}
+    .software-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 0.5rem;
+    }
+
+    .software-cell {
+        display: table-cell;
+        vertical-align: top;
+        padding: 1rem;
+        position: relative;
+    }
+
+    .software-divider {
+        width: 1px;
+        background-color: #ccc;
+        display: table-cell;
+    }
+
+    .software-img {
+        max-width: 120px;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .software-links {
+        margin-top: 0.5rem;
+    }
+
+    .software-links a {
+        display: block;
+        color: #007bff;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .software-description {
+        font-size: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .visit-site-link {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .visit-site-link a {
+        color: #007bff;
+        text-decoration: none;
+    }
+</style>
+
+{% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
 {% for member in members %}
-<div class="card team-member-card">
-    <div class="row mt-3">
-        <div class="col-md-2">
-            <a href={{member.url}}>
-                <img src="{{ site.url }}{{ site.baseurl }}/images/team/{{ member.image }}"
-                    class="card-img img-responsive img-thumbnail"
-                    style="max-width: 100px;"/>
-            </a>
-        </div>
+<div class="software-title">{{ member.title }}</div>
 
-      <div class="col-md-10">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <a href="{{ member.url }}" style="text-decoration: none; color:rgb(16, 158, 240);">
-                        {{ member.title }}
-                    </a>
-                </h4>
-                {% assign role_lines = member.role | newline_to_br | split: '<br />' %}
-                <p class="card-text">{{ role_lines[0] }}</p> 
-                <!-- <p class="card-text">  {{ member.role | split: '\n' | first }}</p> -->
-                
-            </div>
+<div class="software-card">
+    <!-- Left column with image and GitHub link -->
+    <div class="software-cell" style="width: 140px;">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo"
+            class="img-thumbnail software-img" />
+
+        <div class="software-links">
+            {% if member.social.github %}
+            <a href="{{ member.social.github }}" target="_blank" rel="noopener">GitHub</a>
+            {% endif %}
         </div>
+    </div>
+
+    <!-- Vertical divider -->
+    <div class="software-divider"></div>
+
+    <!-- Right column with description and Visit Site -->
+    <div class="software-cell software-description">
+        {{ member.role }}
+
+        {% if member.social.website %}
+        <div class="visit-site-link">
+            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Website</a>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endfor %}
 
-<!-- Staff -->
-
-<h2><a id="staff"></a>Staff</h2>
-{% assign members = site.posts | where: 'category', 'staff' | sort: 'date' %}
-{% for member in members %}
-<div class="card team-member-card">
-    <div class="row mt-3">
-        <div class="col-md-2">
-            <a href={{member.url}}>
-                <img src="{{ site.url }}{{ site.baseurl }}/images/team/{{ member.image }}"
-                    class="card-img img-responsive img-thumbnail"
-                    style="max-width: 100px;"/>
-            </a>
-        </div>
-
-      <div class="col-md-10">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <a href="{{ member.url }}" style="text-decoration: none; color:rgb(16, 158, 240);">
-                        {{ member.title }}
-                    </a>
-                </h4>
-                <p class="card-text">{{ member.role }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-
-<!-- Students -->
-
-<h2><a id="student"></a>Students</h2>
-{% assign members = site.posts | where: 'category', 'student' | sort: 'date' %}
-{% for member in members %}
-<div class="card team-member-card">
-    <div class="row mt-3">
-        <div class="col-md-2">
-            <a href={{member.url}}>
-                <img src="{{ site.url }}{{ site.baseurl }}/images/team/{{ member.image }}"
-                    class="card-img img-responsive img-thumbnail"
-                    style="max-width: 100px;"/>
-            </a>
-        </div>
-
-        <div class="col-md-10">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <a href="{{ member.url }}" style="text-decoration: none; color:rgb(16, 158, 240);">
-                        {{ member.title }}
-                    </a>
-                </h4>
-                <p class="card-text">{{ member.role }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-{% endfor %}
