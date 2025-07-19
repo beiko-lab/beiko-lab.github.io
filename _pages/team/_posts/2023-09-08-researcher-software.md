@@ -4,7 +4,7 @@ category: software
 title: GenGIS
 image: gengis.png 
 role: |
- A bioinformatics application that allows users to combine digital map data with information about biological sequences collected from the environment
+ A bioinformatics application that allows users to combine digital map data with information about biological sequences collected from the environment.
 permalink: 'software/arete'
 social:
     github: https://github.com/beiko-lab/gengis
