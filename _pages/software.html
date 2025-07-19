@@ -5,16 +5,15 @@ excerpt: "Beiko Lab: Software developed for evolutionary and microbial research"
 sitemap: true
 permalink: /software/
 ---
-
 <h1>{{ page.title }}</h1>
 
 <style>
-    .software-wrapper {
+    .software-container {
         margin-bottom: 2rem;
     }
 
     .software-title {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: bold;
         color: #109ef0;
         margin-bottom: 0.5rem;
@@ -26,33 +25,31 @@ permalink: /software/
         padding: 1rem;
         background-color: #f9f9f9;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
         align-items: flex-start;
+        position: relative;
+    }
+
+    .software-column {
+        padding: 0 1rem;
     }
 
     .software-left {
-        flex: 0 0 140px;
-        margin-right: 1rem;
+        width: 150px;
         text-align: center;
-        border-right: 1px solid #ddd;
-        padding-right: 1rem;
     }
 
     .software-left img {
-        max-width: 100px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
         margin-bottom: 0.5rem;
     }
 
-    .software-links a {
-        display: block;
-        margin-top: 0.3rem;
-        font-size: 0.9rem;
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    .software-links a:hover {
-        text-decoration: underline;
+    .software-divider {
+        width: 1px;
+        background-color: #ccc;
+        height: 100%;
     }
 
     .software-right {
@@ -60,35 +57,47 @@ permalink: /software/
         padding-left: 1rem;
     }
 
-    .top-right-link {
-        float: right;
-        margin-top: -1.8rem;
+    .visit-site {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .visit-site a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .github-link {
+        font-size: 0.85rem;
     }
 </style>
 
 {% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
 {% for member in members %}
-<div class="software-wrapper">
-    <div class="software-title">
-        {{ member.title }}
-        <span class="top-right-link">
-            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Site</a>
-        </span>
-    </div>
+<div class="software-container">
+    <div class="software-title">{{ member.title }}</div>
 
     <div class="software-card">
-        <div class="software-left">
+        <div class="visit-site">
+            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Site</a>
+        </div>
+
+        <div class="software-left software-column">
             <a href="{{ member.social.website }}" target="_blank" rel="noopener">
                 <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo" />
             </a>
-            <div class="software-links">
-                {% if member.social.github %}
+            {% if member.social.github %}
+            <div class="github-link">
                 <a href="{{ member.social.github }}" target="_blank" rel="noopener">GitHub</a>
-                {% endif %}
             </div>
+            {% endif %}
         </div>
 
-        <div class="software-right">
+        <div class="software-divider"></div>
+
+        <div class="software-right software-column">
             {{ member.role }}
         </div>
     </div>
