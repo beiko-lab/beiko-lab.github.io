@@ -11,4 +11,4 @@ social:
     website: https://github.com/beiko-lab/arete
 ---
 
-Arete is an integrated bioinformatics tool built to improve the discovery and functional annotation of antimicrobial resistance (AMR) genes, especially in metagenomic or draft genome contexts. It leverages evolutionary and syntenic signals from gene neighborhoods, combined with robust machine learning techniques, to infer both known and novel AMR candidates.
+A bioinformatics best-practice analysis pipeline for profiling the genomic repertoire and evolutionary dynamics of microorganisms with a particular focus on pathogens
