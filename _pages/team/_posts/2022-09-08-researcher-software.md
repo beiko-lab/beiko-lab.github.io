@@ -2,7 +2,7 @@
 layout: member
 category: software
 title: Arete
-image: arete.png
+image: arete-image.png 
 role: |
   Arete is a computational framework designed to identify and prioritize antimicrobial resistance genes using gene neighborhood data, machine learning, and comparative genomics.
 permalink: 'software/arete'
