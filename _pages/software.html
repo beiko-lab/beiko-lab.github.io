@@ -9,84 +9,100 @@ permalink: /software/
 <h1>{{ page.title }}</h1>
 
 <style>
-    .software-card {
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 0;
+    .software-wrapper {
         margin-bottom: 2rem;
-        background-color: #f9f9f9;
-        display: table;
-        width: 100%;
-        table-layout: fixed;
     }
 
-    .software-title {
-        font-size: 1.3rem;
+    .software-name {
+        font-size: 1.4rem;
         font-weight: bold;
         color: #109ef0;
         margin-bottom: 0.5rem;
     }
 
-    .software-cell {
-        display: table-cell;
-        vertical-align: top;
+    .software-card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
         padding: 1rem;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: row;
+        min-height: 180px;
+    }
+
+    .software-cell {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-right: 1rem;
     }
 
     .software-divider {
         width: 1px;
         background-color: #ccc;
-        display: table-cell;
+        margin: 0 1rem;
+    }
+
+    .software-description {
+        flex: 2;
+        font-size: 1rem;
+        padding-left: 1rem;
     }
 
     .software-img {
         max-width: 120px;
-        display: block;
-        margin-bottom: 0.5rem;
+        max-height: 120px;
+        object-fit: contain;
+        margin-bottom: 1rem;
     }
 
     .software-links {
+        display: flex;
+        justify-content: space-between;
         margin-top: 0.5rem;
     }
 
     .software-links a {
-        display: block;
+        font-size: 0.9rem;
         color: #007bff;
         text-decoration: none;
-        font-size: 0.9rem;
-    }
-
-    .software-description {
-        font-size: 1rem;
     }
 </style>
 
-{% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
-{% for member in members %}
-<div class="software-title">{{ member.title }}</div>
+{% assign tools = site.posts | where: 'category', 'software' | sort: 'date' %}
+{% for member in tools %}
+<div class="software-wrapper">
+    <div class="software-name">{{ member.title }}</div>
 
-<div class="software-card">
-    <!-- Left column with image and links -->
-    <div class="software-cell" style="width: 140px;">
-        <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo"
-            class="img-thumbnail software-img" />
+    <div class="software-card">
+        <!-- Left Column -->
+        <div class="software-cell">
+            <a href="{{ member.social.website }}" target="_blank" rel="noopener">
+                <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo"
+                    class="img-thumbnail software-img" />
+            </a>
 
-        <div class="software-links">
-            {% if member.social.github %}
-            <a href="{{ member.social.github }}" target="_blank" rel="noopener">GitHub</a>
-            {% endif %}
-            {% if member.social.website %}
-            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Site</a>
-            {% endif %}
+            <div class="software-links">
+                {% if member.social.github %}
+                <a href="{{ member.social.github }}" target="_blank" rel="noopener">GitHub</a>
+                {% else %}
+                <span></span>
+                {% endif %}
+
+                {% if member.social.website %}
+                <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Site</a>
+                {% endif %}
+            </div>
         </div>
-    </div>
 
-    <!-- Vertical divider -->
-    <div class="software-divider"></div>
+        <!-- Divider -->
+        <div class="software-divider"></div>
 
-    <!-- Right column with description -->
-    <div class="software-cell software-description">
-        {{ member.role }}
+        <!-- Right Column (Description) -->
+        <div class="software-description">
+            {{ member.role }}
+        </div>
     </div>
 </div>
 {% endfor %}
