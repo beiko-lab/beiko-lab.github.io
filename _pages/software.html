@@ -62,6 +62,11 @@ permalink: /software/
         padding-bottom: 2rem;
     }
 
+    .software-description h3,
+    .software-description p {
+        margin-top: 0;
+    }
+
     .visit-site-link {
         position: absolute;
         bottom: 1rem;
@@ -77,7 +82,7 @@ permalink: /software/
 
 {% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
 {% for member in members %}
-<h4 class="software-title">{{ member.title }}</h4>
+<h2 class="software-title">{{ member.title }}</h2>
 
 <div class="software-card">
     <!-- Left column with image and GitHub link -->
