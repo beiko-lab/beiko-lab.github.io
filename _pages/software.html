@@ -23,7 +23,7 @@ permalink: /software/
     .software-title {
         font-size: 1.3rem;
         font-weight: bold;
-        color: black;
+        color:black;
         margin-bottom: 0.5rem;
     }
 
@@ -31,7 +31,6 @@ permalink: /software/
         display: table-cell;
         vertical-align: top;
         padding: 1rem;
-        position: relative;
     }
 
     .software-divider {
@@ -59,19 +58,6 @@ permalink: /software/
 
     .software-description {
         font-size: 1rem;
-        padding-bottom: 2rem;
-    }
-
-    .visit-site-link {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .visit-site-link a {
-        color: #007bff;
-        text-decoration: none;
     }
 </style>
 
@@ -80,7 +66,7 @@ permalink: /software/
 <div class="software-title">{{ member.title }}</div>
 
 <div class="software-card">
-    <!-- Left column with image and GitHub link -->
+    <!-- Left column with image and links -->
     <div class="software-cell" style="width: 140px;">
         <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo"
             class="img-thumbnail software-img" />
@@ -89,21 +75,18 @@ permalink: /software/
             {% if member.social.github %}
             <a href="{{ member.social.github }}" target="_blank" rel="noopener">GitHub</a>
             {% endif %}
+            {% if member.social.website %}
+            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Site</a>
+            {% endif %}
         </div>
     </div>
 
     <!-- Vertical divider -->
     <div class="software-divider"></div>
 
-    <!-- Right column with description and Visit Site -->
+    <!-- Right column with description -->
     <div class="software-cell software-description">
         {{ member.role }}
-
-        {% if member.social.website %}
-        <div class="visit-site-link">
-            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Website</a>
-        </div>
-        {% endif %}
     </div>
 </div>
 {% endfor %}
