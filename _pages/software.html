@@ -28,6 +28,7 @@ permalink: /software/
         padding: 1rem;
         background-color: #f9f9f9;
         min-height: 220px;
+        height: 100%;
     }
 
     .software-image-column {
@@ -45,16 +46,20 @@ permalink: /software/
         border-radius: 5px;
     }
 
+    .github-link {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        color: #333;
+    }
+
     .software-divider {
         width: 1px;
         background-color: #ccc;
-        align-self: stretch;
+        margin: 0 1rem;
     }
 
     .software-description {
         flex-grow: 1;
-        padding-left: 1rem;
-        font-size: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -73,40 +78,31 @@ permalink: /software/
     .software-links a:hover {
         text-decoration: underline;
     }
-
-    .github-link {
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
-    }
 </style>
 
-{% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
-{% for member in members %}
+{% assign tools = site.posts | where: 'category', 'software' | sort: 'date' %}
+{% for tool in tools %}
 <div class="software-wrapper">
-    <div class="software-title">{{ member.title }}</div>
+    <div class="software-title">{{ tool.title }}</div>
 
     <div class="software-card">
-        <!-- Image and GitHub link -->
         <div class="software-image-column">
-            <a href="{{ member.social.website }}" target="_blank" rel="noopener">
-                <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo"
-                    class="software-img img-thumbnail" />
+            <a href="{{ tool.social.website }}" target="_blank" rel="noopener">
+                <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ tool.image }}" alt="{{ tool.title }} logo" class="software-img" />
             </a>
-            {% if member.social.github %}
-            <div class="github-link">
-                <a href="{{ member.social.github }}" target="_blank" rel="noopener">GitHub</a>
-            </div>
+            {% if tool.social.github %}
+                <div class="github-link">
+                    <a href="{{ tool.social.github }}" target="_blank">GitHub</a>
+                </div>
             {% endif %}
         </div>
 
-        <!-- Vertical divider -->
         <div class="software-divider"></div>
 
-        <!-- Description and visit site -->
         <div class="software-description">
-            <div>{{ member.role }}</div>
+            <div>{{ tool.role }}</div>
             <div class="software-links">
-                <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Site</a>
+                <a href="{{ tool.social.website }}" target="_blank">Visit Site</a>
             </div>
         </div>
     </div>
