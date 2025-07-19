@@ -7,27 +7,65 @@ permalink: /software/
 ---
 <h1>{{ page.title }}</h1>
 
+<style>
+    .software-card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        position: relative;
+        background-color: #f9f9f9;
+    }
+
+    .software-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #109ef0;
+    }
+
+    .software-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .software-body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .software-img {
+        max-width: 120px;
+        margin-right: 1rem;
+    }
+
+    .software-description {
+        flex-grow: 1;
+        font-size: 1rem;
+    }
+</style>
+
 {% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
 {% for member in members %}
-<div class="card team-member-card">
-    <div class="row mt-3">
-        <div class="col-md-2">
+<div class="software-card">
+    <div class="software-header">
+        <div class="software-title">{{ member.title }}</div>
+        <div>
+            <a href="{{ member.social.website }}" target="_blank" rel="noopener" style="text-decoration: none; color: #007bff;">Visit Site</a>
+        </div>
+    </div>
+
+    <div class="software-body">
+        <div>
             <a href="{{ member.social.website }}" target="_blank" rel="noopener">
-                <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}"
-                    class="card-img img-responsive img-thumbnail"
-                    style="max-width: 100px;" />
+                <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo"
+                    class="img-thumbnail software-img" />
             </a>
         </div>
 
-        <div class="col-md-10">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <a href="{{ member.social.website }}" target="_blank" rel="noopener" style="text-decoration: none; color:rgb(16, 158, 240);">
-                        {{ member.title }}
-                    </a>
-                </h4>
-                <p class="card-text">{{ member.role }}</p>
-            </div>
+        <div class="software-description">
+            {{ member.role }}
         </div>
     </div>
 </div>
