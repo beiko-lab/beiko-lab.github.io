@@ -5,88 +5,92 @@ excerpt: "Beiko Lab: Software developed for evolutionary and microbial research"
 sitemap: true
 permalink: /software/
 ---
+
 <h1>{{ page.title }}</h1>
 
 <style>
-    .software-container {
+    .software-wrapper {
         margin-bottom: 2rem;
     }
 
     .software-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: bold;
         color: #109ef0;
         margin-bottom: 0.5rem;
     }
 
     .software-card {
+        display: flex;
+        align-items: stretch;
         border: 1px solid #ccc;
         border-radius: 10px;
         padding: 1rem;
         background-color: #f9f9f9;
+        min-height: 220px;
+    }
+
+    .software-image-column {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        position: relative;
-    }
-
-    .software-column {
-        padding: 0 1rem;
-    }
-
-    .software-left {
-        width: 150px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 140px;
         text-align: center;
+        margin-right: 1rem;
     }
 
-    .software-left img {
-        max-width: 100%;
-        height: auto;
+    .software-img {
+        max-width: 100px;
         border-radius: 5px;
-        margin-bottom: 0.5rem;
     }
 
     .software-divider {
         width: 1px;
         background-color: #ccc;
-        height: 100%;
+        align-self: stretch;
     }
 
-    .software-right {
-        flex: 1;
+    .software-description {
+        flex-grow: 1;
         padding-left: 1rem;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
-    .visit-site {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 0.9rem;
+    .software-links {
+        text-align: right;
+        font-size: 0.95rem;
     }
 
-    .visit-site a {
+    .software-links a {
         color: #007bff;
         text-decoration: none;
     }
 
+    .software-links a:hover {
+        text-decoration: underline;
+    }
+
     .github-link {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
     }
 </style>
 
 {% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
 {% for member in members %}
-<div class="software-container">
+<div class="software-wrapper">
     <div class="software-title">{{ member.title }}</div>
 
     <div class="software-card">
-        <div class="visit-site">
-            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Site</a>
-        </div>
-
-        <div class="software-left software-column">
+        <!-- Image and GitHub link -->
+        <div class="software-image-column">
             <a href="{{ member.social.website }}" target="_blank" rel="noopener">
-                <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo" />
+                <img src="{{ site.url }}{{ site.baseurl }}/images/tools/{{ member.image }}" alt="{{ member.title }} logo"
+                    class="software-img img-thumbnail" />
             </a>
             {% if member.social.github %}
             <div class="github-link">
@@ -95,10 +99,15 @@ permalink: /software/
             {% endif %}
         </div>
 
+        <!-- Vertical divider -->
         <div class="software-divider"></div>
 
-        <div class="software-right software-column">
-            {{ member.role }}
+        <!-- Description and visit site -->
+        <div class="software-description">
+            <div>{{ member.role }}</div>
+            <div class="software-links">
+                <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Site</a>
+            </div>
         </div>
     </div>
 </div>
