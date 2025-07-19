@@ -77,7 +77,7 @@ permalink: /software/
 
 {% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
 {% for member in members %}
-<h3 class="software-title">{{ member.title }}</h3>
+<h4 class="software-title">{{ member.title }}</h4>
 
 <div class="software-card">
     <!-- Left column with image and GitHub link -->
@@ -97,12 +97,12 @@ permalink: /software/
 
     <!-- Right column with description and Visit Site -->
     <div class="software-cell software-description">
-        <h4>{{ member.role }}</h4>
+        <h3>{{ member.role }}</h3>
 
         {% if member.social.website %}
-        <div class="visit-site-link">
-            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Website</a>
-        </div>
+       <div class="visit-site-link">
+         <h3><a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Website</a></h3>
+     </div>
         {% endif %}
     </div>
 </div>
