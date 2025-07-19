@@ -62,11 +62,6 @@ permalink: /software/
         padding-bottom: 2rem;
     }
 
-    .software-description h3,
-    .software-description p {
-        margin-top: 0;
-    }
-
     .visit-site-link {
         position: absolute;
         bottom: 1rem;
@@ -82,7 +77,7 @@ permalink: /software/
 
 {% assign members = site.posts | where: 'category', 'software' | sort: 'date' %}
 {% for member in members %}
-<h2 class="software-title">{{ member.title }}</h2>
+<div class="software-title">{{ member.title }}</div>
 
 <div class="software-card">
     <!-- Left column with image and GitHub link -->
@@ -92,7 +87,7 @@ permalink: /software/
 
         <div class="software-links">
             {% if member.social.github %}
-            <h3><a href="{{ member.social.github }}" target="_blank" rel="noopener">GitHub</a></h3>
+            <a href="{{ member.social.github }}" target="_blank" rel="noopener">GitHub</a>
             {% endif %}
         </div>
     </div>
@@ -102,12 +97,12 @@ permalink: /software/
 
     <!-- Right column with description and Visit Site -->
     <div class="software-cell software-description">
-        <h3>{{ member.role }}</h3>
+        {{ member.role }}
 
         {% if member.social.website %}
-       <div class="visit-site-link">
-         <h3><a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Website</a></h3>
-     </div>
+        <div class="visit-site-link">
+            <a href="{{ member.social.website }}" target="_blank" rel="noopener">Visit Website</a>
+        </div>
         {% endif %}
     </div>
 </div>
