@@ -7,7 +7,7 @@ role: A bioinformatics best-practice analysis pipeline for profiling the genomic
 permalink: 'software/arete'
 social:
     github: https://github.com/beiko-lab/arete
-    website: https://arete-amr.ca/
+    website: https://beiko-lab.github.io/arete/
 ---
 
 A bioinformatics best-practice analysis pipeline for profiling the genomic repertoire and evolutionary dynamics of microorganisms with a particular focus on pathogens
