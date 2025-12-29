@@ -1,6 +1,6 @@
 ---
 layout: member
-category: student
+category: postdoc
 title: Zhongzhi (Michael) Sun
 image: michael.png
 role: Postdoctoral Fellow
