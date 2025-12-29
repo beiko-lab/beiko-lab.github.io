@@ -18,10 +18,14 @@ education:
  - MSt (Bioinformatics), Rashtreeya Vidyalaya College of Engineering, Bangalore, India
  - BEng (Biotechnology), People’s Education Society University, Bangalore, India
 
-interests:
-- CMetagenomics/Microbiomics
-- Microbial genomics,
-- Human Microbiome
-- Environmental Microbiome
 ---
 With a background in Bioinformatics and specifically Metagenomics, I am currently analysing river samples for their microbial composition and diversity. The study takes on a river ecology point of view into investigating how seasonal variation plays an impact into riverine microbiome along with influences from environmental parameters. The aim of the study is to establish the role microbial community plays in riverine ecosystem dynamics, stability and health. I employ a comparative approach to this research study by considering three different taxonomic profiling tools, with diverse algorithmic methods and evaluate their performance. 
+
+### Interests
+Metagenomics/Microbiomics
+
+Microbial genomics
+
+Human Microbiome
+
+Environmental Microbiome

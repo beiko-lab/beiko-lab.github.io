@@ -30,7 +30,10 @@ I completed my PhD at the University of Ottawa, where I worked under the supervi
 ### Interests
 
 Microbiome
+
 Metagenomics
+
 Metaproteomics
+
 Bioinformatics
 

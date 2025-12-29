@@ -23,8 +23,12 @@ Eukaryotic gene prediction has not been solved with satisfactory accuracy over t
 
 ### Interests
 Genomics
+
 Molecular Evolution
+
 Phylogenetics
+
 Machine Learning
+
 Data Structures & Algorithms
 
