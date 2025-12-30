@@ -29,7 +29,7 @@ I’m interested in how lateral gene transfer reshapes microbial genomes and fac
 External personal links:  
 <a href="https://blogs.dal.ca/openthink/author/somabarawi/" target="_blank" rel="noopener">Open Think</a>
 
-### Interests:
+### Interests
 Marine metagenomics<br>
 Microbial ecology <br>
 Microbial evolution
