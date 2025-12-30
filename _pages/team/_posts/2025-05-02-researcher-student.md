@@ -22,10 +22,7 @@ education:
 With a background in Bioinformatics and specifically Metagenomics, I am currently analysing river samples for their microbial composition and diversity. The study takes on a river ecology point of view into investigating how seasonal variation plays an impact into riverine microbiome along with influences from environmental parameters. The aim of the study is to establish the role microbial community plays in riverine ecosystem dynamics, stability and health. I employ a comparative approach to this research study by considering three different taxonomic profiling tools, with diverse algorithmic methods and evaluate their performance. 
 
 ### Interests
-Metagenomics/Microbiomics
-
-Microbial genomics
-
-Human Microbiome
-
+Metagenomics/Microbiomics<br> 
+Microbial genomics<br>
+Human Microbiome<br>
 Environmental Microbiome

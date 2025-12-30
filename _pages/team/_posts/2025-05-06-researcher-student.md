@@ -22,13 +22,9 @@ education:
 Eukaryotic gene prediction has not been solved with satisfactory accuracy over the past 25 years. This is especially true for unicellular eukaryotes called protists, which are key to understanding the origin of eukaryotes. My research is focused on investigating why traditional machine learning methods perform poorly and how deep learning can improve this process.
 
 ### Interests
-Genomics
-
-Molecular Evolution
-
-Phylogenetics
-
-Machine Learning
-
+Genomics<br>
+Molecular Evolution<br>
+Phylogenetics<br>
+Machine Learning<br>
 Data Structures & Algorithms
 

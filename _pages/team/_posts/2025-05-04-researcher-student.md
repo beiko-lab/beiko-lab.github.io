@@ -13,6 +13,8 @@ social:
     website:
     orcid: https://orcid.org/
     research-gate: https://www.researchgate.net/
+    other-links: https://blogs.dal.ca/openthink/author/somabarawi/
+
 education:
  - Interdisciplinary PhD student (Started Sep. 2024)
  - BSc (Biology), University of Sulaimani, Kurdistan, Iraq
@@ -22,4 +24,12 @@ interests:
 - Microbial ecology
 - Microbial evolution
 ---
-I’m interested in how lateral gene transfer reshapes microbial genomes and facilitates adaptation in marine environments, and what this means for broader ecological processes. Currently, I’m focused on the acquisition and evolutionary history of nitrogen-fixing genes in marine non-cyanobacterial diazotrophs from the family Oceanospirillaceae.
+I’m interested in how lateral gene transfer reshapes microbial genomes and facilitates adaptation in marine environments, and what this means for broader ecological processes. Currently, I’m focused on the acquisition and evolutionary history of nitrogen-fixing genes in marine non-cyanobacterial diazotrophs from the family Oceanospirillaceae
+
+External personal links:  
+<a href="https://blogs.dal.ca/openthink/author/somabarawi/" target="_blank" rel="noopener">Open Think</a>
+
+### Interests:
+Marine metagenomics<br>
+Microbial ecology <br>
+Microbial evolution
