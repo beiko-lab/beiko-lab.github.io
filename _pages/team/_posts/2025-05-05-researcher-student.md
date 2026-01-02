@@ -22,7 +22,7 @@ Antimicrobial resistance (AMR) genes frequently spread via horizontal gene trans
 
 ### Interests
 Comparative genomicsc<br>
-Evolutionary Biology<br>
+Evolutionary biology<br>
 Machine learning<br>
 Antimicrobial resistance<br>
 Bioinformatics software development
