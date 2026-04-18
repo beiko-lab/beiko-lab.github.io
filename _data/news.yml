@@ -13,3 +13,11 @@
   text: "Attended ZAMBI 2026, highlighting advances in microbial bioinformatics and genomics research."
   category: "upcoming"
   link: "https://zambi.ca/"
+
+- title: "Soma Presentation – 9th Annual Dalhousie Biology Graduate Students Meeting"
+  date: "March 17, 2026"
+  location: "Dalhousie University, Halifax, Nova Scotia"
+  image: "soma_biology_symposium.jpg"
+  text: "Soma presented at the 9th Annual Dalhousie Biology Graduate Students Meeting."
+  category: "past"
+  link: "#"
