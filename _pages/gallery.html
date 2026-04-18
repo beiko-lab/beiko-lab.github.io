@@ -1,0 +1,74 @@
+---
+title: "Gallery"
+layout: default
+excerpt: "Beiko Lab"
+sitemap: false
+permalink: /gallery.html
+---
+
+<style>
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Gallery layout */
+.gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* caption under image */
+.gallery-caption {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+</style>
+
+<p>
+In our lab we like to go on many adventures for the betterment of science. Along the way we manage to make good friends, build collaborations, and share our work with the world.
+</p>
+
+<p>
+Here is where we collect documentary evidence of these adventures of lab members and the friends we work with.
+</p>
+
+<!-- GROUP BY YEAR -->
+{% assign years = site.data.gallery | map: "year" | uniq %}
+
+{% for y in years %}
+
+<h2>{{ y }}</h2>
+
+<div class="gallery-grid">
+
+  {% for item in site.data.gallery %}
+    {% if item.year == y %}
+
+    <div class="gallery-item">
+      <img src="{{ '/images/gallery/' | append: item.image | relative_url }}" alt="Gallery image">
+      <div class="gallery-caption">
+        {{ item.text }}
+      </div>
+    </div>
+
+    {% endif %}
+  {% endfor %}
+
+</div>
+
+{% endfor %}
