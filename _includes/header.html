@@ -15,13 +15,11 @@
   align-items: center;
 }
 
-/* keep bootstrap structure stable */
 .navbar-header {
   display: flex;
   align-items: center;
 }
 
-/* BRAND */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -40,7 +38,7 @@
   margin: 0;
 }
 
-/* NAV ALIGN RIGHT */
+/* NAV ALIGN */
 .navbar-collapse {
   margin-left: auto !important;
 }
@@ -50,13 +48,16 @@
 }
 
 /* =========================
-   ACTIVE + HOVER STYLING
+   ACTIVE LINK FIX (IMPORTANT)
    ========================= */
 
-/* active page */
-.navbar-nav > li.active > a {
+.navbar-nav > li.active > a,
+.navbar-nav > li.active > a:focus,
+.navbar-nav > li.active > a:hover {
   color: var(--brand-blue) !important;
-  font-weight: 600;
+  font-weight: 600 !important;
+  border-bottom: 2px solid var(--brand-blue);
+  background: transparent !important;
 }
 
 /* hover links */
@@ -106,7 +107,10 @@
       <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">
 
         <div class="brand-text">
-          <span style="color:black; font-size:14px; font-weight:bold;">Welcome to</span>
+          <span style="color:black; font-size:14px; font-weight:bold;">
+            Welcome to
+          </span>
+
           <span style="color:var(--brand-blue); font-weight:600; font-size:16px;">
             Beiko Lab
           </span>
@@ -125,7 +129,8 @@
 
       <ul class="nav navbar-nav navbar-right">
 
-        <li class="{% if page.url == '/' %}active{% endif %}">
+        <!-- HOME (ROBUST ACTIVE FIX) -->
+        <li class="{% if page.url == '/' or page.url == '/index.html' or page.url == '/index' %}active{% endif %}">
           <a href="{{ site.url }}{{ site.baseurl }}/">Home</a>
         </li>
 
