@@ -4,6 +4,7 @@
     <!-- HEADER -->
     <div class="navbar-header">
 
+      <!-- HAMBURGER -->
       <button type="button"
               class="navbar-toggle collapsed"
               data-toggle="collapse"
@@ -15,48 +16,34 @@
         <span class="icon-bar"></span>
       </button>
 
-      <!-- BRAND -->
-      <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/"
-         style="display:flex; align-items:center; gap:10px;">
+      <!-- BRAND (STACKED) -->
+      <a class="navbar-brand brand-stack" href="{{ site.url }}{{ site.baseurl }}/">
 
-        <strong style="white-space:nowrap;">
-          <span style="color: black;">Welcome to </span>
-          <span style="color: rgb(16, 158, 240);">Beiko Lab</span>
-        </strong>
+        <div class="brand-text">
+          <span style="color:black;">Welcome to </span>
+          <span style="color:rgb(16,158,240);">Beiko Lab</span>
+        </div>
 
         <img src="{{ '/images/logo/dalhousie-logo-black.svg' | relative_url }}"
              alt="Dalhousie University"
-             style="height:32px; width:auto; display:block;">
+             class="brand-logo">
 
       </a>
 
     </div>
 
-    <!-- NAV LINKS -->
+    <!-- NAV -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
 
-        <li><a href="{{ site.url }}{{ site.baseurl }}/"
-          {% if page.url contains '/index' or page.url == '/' %}style="color: rgb(16, 158, 240);"{% endif %}>Home</a></li>
-
-        <li><a href="{{ site.url }}{{ site.baseurl }}/team"
-          {% if page.url contains '/team' %}style="color: rgb(16, 158, 240);"{% endif %}>Team</a></li>
-
-        <li><a href="{{ site.url }}{{ site.baseurl }}/news"
-          {% if page.url contains '/news' %}style="color: rgb(16, 158, 240);"{% endif %}>News</a></li>
-
-        <li><a href="{{ site.url }}{{ site.baseurl }}/research"
-          {% if page.url contains '/research' %}style="color: rgb(16, 158, 240);"{% endif %}>Research</a></li>
-
-        <li><a href="{{ site.url }}{{ site.baseurl }}/software"
-          {% if page.url contains '/software' %}style="color: rgb(16, 158, 240);"{% endif %}>Software</a></li>
-
-        <li><a href="{{ site.url }}{{ site.baseurl }}/publications"
-          {% if page.url contains '/publications' %}style="color: rgb(16, 158, 240);"{% endif %}>Publications</a></li>
-
-        <li><a href="{{ site.url }}{{ site.baseurl }}/opportunities"
-          {% if page.url contains '/opportunities' %}style="color: rgb(16, 158, 240);"{% endif %}>Opportunities</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/team">Team</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/news">News</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/research">Research</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/software">Software</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/opportunities">Opportunities</a></li>
 
       </ul>
 
