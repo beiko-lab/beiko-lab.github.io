@@ -10,17 +10,20 @@
 		<span class="icon-bar"></span>
 	  </button>
 
-	  <!-- DAL LOGO (NO LINK) -->
-	  <img src="{{ '/images/logo/dal-logo.png' | relative_url }}" 
-	       alt="Dalhousie University"
-	       style="height:35px; vertical-align:middle; margin-right:10px; display:inline-block;">
+	  <!-- LOGO FIRST + BRAND INLINE -->
+	  <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/" style="display:flex; align-items:center; gap:10px;">
 
-	  <!-- LAB BRAND -->
-	  <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">
- 		 <strong>
-		   <span style="color: black;">Welcome to </span>
-		   <span style="color: rgb(16, 158, 240);">Beiko Lab</span>
-		 </strong>
+		<!-- DAL LOGO -->
+		<img src="{{ '/images/logo/dal-logo.png' | relative_url }}" 
+		     alt="Dalhousie University"
+		     style="height:35px;">
+
+		<!-- TEXT -->
+		<strong>
+		  <span style="color: black;">Welcome to </span>
+		  <span style="color: rgb(16, 158, 240);">Beiko Lab</span>
+		</strong>
+
 	  </a>
 
 	</div>
