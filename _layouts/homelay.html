@@ -10,7 +10,12 @@ layout: default
 }
 </style>
 
+	{{ content }}
+
 <div id="homeid" class="col-sm-8 ml-0 nopadding-left">
+	<div class="item active">
+	<img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}" alt="lab photo">
+	</div>
 	<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" >
 		
 	    <ol class="carousel-indicators">
@@ -38,7 +43,6 @@ layout: default
 		</a>
 	</div>
 
-	{{ content }}
 </div>
 
 <div id="newsid" class="col-sm-4 nopadding-right" >
