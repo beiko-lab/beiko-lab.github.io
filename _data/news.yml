@@ -31,23 +31,6 @@
   category: "past"
   link: "https://icgenomics.ca/"
 
-- title: "Microbiome Anchor Conference"
-  date: "June 8-10, 2026"
-  location: "Oak Island Resort, Western Shore, Nova Scotia"
-  image: "microbiome_anchor.png"
-  text: "Participation in the Microbiome Anchor Conference focused on microbial community dynamics and interdisciplinary collaboration."
-  category: "upcoming"
-  link: "https://microbiome-anchor.ca/#registration"
-
-- title: "ZAMBI 2026"
-  date: "July 6-9, 2026"
-  location: "Dalhousie University, Halifax, Nova Scotia"
-  image: "zambi_2026.jpg"
-  text: "Attended ZAMBI 2026, highlighting advances in microbial bioinformatics and genomics research."
-  category: "upcoming"
-  link: "https://zambi.ca/"
-
-
 - title: "Rob Presentation - ICG Seminar"
   date: "April 02, 2026"
   location: "Dalhousie University, Halifax, Nova Scotia"
