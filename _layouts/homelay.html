@@ -3,7 +3,7 @@ layout: default
 ---
 
 <style>
-/* HERO IMAGE */
+/* Hero image */
 .lab-image img {
   width: 100%;
   height: 60vh;
@@ -11,49 +11,44 @@ layout: default
   display: block;
 }
 
-/* Remove side padding so it aligns with header edges */
+/* Remove container padding for full width */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* Optional: add controlled inner spacing for text */
+/* Full-width content */
 .content-wrapper {
-  padding: 30px 5%;
+  width: 100%;
+  padding: 40px 6%;
 }
 
-/* 🎞️ Carousel */
+/* Carousel images */
 .carousel-inner .item img {
   width: 100%;
   height: 400px;
   object-fit: cover;
 }
+
+/* Remove default body margin */
+body {
+  margin: 0;
+}
 </style>
 
-
-<!-- LAB IMAGE -->
+<!-- Lab image -->
 <div class="lab-image">
   <img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}" alt="Beiko Lab Photo">
 </div>
 
-
-<!-- CONTENT + SIDEBAR (FULL WIDTH BUT PADDED INSIDE) -->
+<!-- Full-width content -->
 <div class="container-fluid">
-  <div class="row">
-
-    <div class="col-sm-8 content-wrapper">
-      {{ content }}
-    </div>
-
-    <div class="col-sm-4 content-wrapper">
-      {% include tweets.html %}
-    </div>
-
+  <div class="content-wrapper">
+    {{ content }}
   </div>
 </div>
 
-
-<!--CAROUSEL -->
+<!-- Carousel -->
 <div class="container-fluid">
   <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
 
