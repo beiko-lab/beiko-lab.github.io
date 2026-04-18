@@ -1,48 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>
-    {{ site.title }} - {% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}
-  </title>
-
+  <title>{{ site.title }} - {% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
   <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl | prepend: site.url}}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}{{ site.baseurl }}/images/favicon.ico">
-
+  <link rel="shortcut icon" type ="image/x-icon" href="{{ site.url }}{{ site.baseurl }}/images/favicon.ico">
   <script src="https://kit.fontawesome.com/a24320d871.js" crossorigin="anonymous"></script>
 
-  {% if jekyll.environment == 'production' %}
-  {% include analytics.html %}
-  {% endif %}
+{% if jekyll.environment == 'production' %}
+{% include analytics.html %}
+{% endif %}
+
 </head>
 
-<body>
 
-  <!-- DAL LOGO (VISIBLE HEADER ELEMENT) -->
-  <div style="text-align:center; padding:15px 0;">
-    <a href="https://www.dal.ca/" target="_blank">
-      <img src="{{ '/images/logo/dal-logo.png' | relative_url }}" 
-           alt="Dalhousie University"
-           style="height:60px;">
-    </a>
-  </div>
 
-  <!-- MAIN SITE CONTENT -->
-  {% include header.html %}
-
-  <div class="container">
-    {{ content }}
-  </div>
-
-  {% include footer.html %}
-
-</body>
-
-</html>
