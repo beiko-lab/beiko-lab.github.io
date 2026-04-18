@@ -1,57 +1,48 @@
 <style>
 /* =========================
-   NAVBAR FLEX FIX
+   RESET BOOTSTRAP CONFLICTS
    ========================= */
 
 .navbar .container-fluid {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-/* LEFT AREA (hamburger + brand) */
+/* DO NOT force flex on navbar-header (Bootstrap breaks otherwise) */
 .navbar-header {
   display: flex;
   align-items: center;
-  flex: 1;
 }
 
-/* BRAND STACK (IMPORTANT FIX) */
+/* BRAND ONLY */
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 15px;
 }
 
-/* STACKED TEXT */
+/* TEXT STACK FIX */
 .brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .brand-text span {
+  display: block;
   margin: 0;
 }
 
-/* RIGHT NAV */
+/* NAV FIX */
 .navbar-collapse {
-  display: flex !important;
-  justify-content: flex-end;
-  flex: 2;
+  margin-left: auto !important;
 }
 
-/* REMOVE BOOTSTRAP FLOATS */
 .navbar-nav {
   float: none !important;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
 }
 
-/* CLEAN LINK SPACING */
+/* OPTIONAL: tighten spacing */
 .navbar-nav > li > a {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -80,21 +71,16 @@
       <!-- BRAND -->
       <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">
 
-        <!-- TEXT STACK -->
         <div class="brand-text">
-          <span style="color:black; font-size:14px;">
-            Welcome to
-          </span>
-
+          <span style="color:black; font-size:14px;">Welcome to</span>
           <span style="color:rgb(16,158,240); font-weight:600; font-size:16px;">
             Beiko Lab
           </span>
         </div>
 
-        <!-- LOGO -->
         <img src="{{ '/images/logo/dalhousie-logo-black.svg' | relative_url }}"
              alt="Dalhousie University"
-             style="height:40px; width:auto; display:block;">
+             style="height:40px; width:auto;">
 
       </a>
 
@@ -103,7 +89,7 @@
     <!-- NAV -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
 
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
         <li><a href="{{ site.url }}{{ site.baseurl }}/team">Team</a></li>
         <li><a href="{{ site.url }}{{ site.baseurl }}/news">News</a></li>
