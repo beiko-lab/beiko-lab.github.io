@@ -31,6 +31,39 @@
   category: "past"
   link: "https://icgenomics.ca/"
 
+- title: "Microbiome Anchor Conference"
+  date: "June 8-10, 2026"
+  location: "Oak Island Resort, Western Shore, Nova Scotia"
+  image: "microbiome_anchor.png"
+  text: "Participation in the Microbiome Anchor Conference focused on microbial community dynamics and interdisciplinary collaboration."
+  category: "upcoming"
+  link: "https://microbiome-anchor.ca/#registration"
+
+- title: "ZAMBI 2026"
+  date: "July 6-9, 2026"
+  location: "Dalhousie University, Halifax, Nova Scotia"
+  image: "zambi_2026.jpg"
+  text: "Attended ZAMBI 2026, highlighting advances in microbial bioinformatics and genomics research."
+  category: "upcoming"
+  link: "https://zambi.ca/"
+
+
+- title: "ICG Seminar"
+  date: "April 02, 2026"
+  location: "Dalhousie University, Halifax, Nova Scotia"
+  image: "beiko_icg.png"
+  text: "Rob presents at the ICG Seminar"
+  category: "past"
+  link: "https://icgenomics.ca/"
+
+- title: "ICG Seminar"
+  date: "April 02, 2026"
+  location: "Dalhousie University, Halifax, Nova Scotia"
+  image: "sneha_icg.png"
+  text: "Sneha presents at the ICG Seminar"
+  category: "past"
+  link: "https://icgenomics.ca/"
+
 - title: "ICG Seminar"
   date: "April 02, 2026"
   location: "Dalhousie University, Halifax, Nova Scotia"
@@ -38,3 +71,12 @@
   text: "Bonface presents at the ICG Seminar"
   category: "past"
   link: "https://icgenomics.ca/"
+
+
+- title: "Soma Presentation – 9th Annual Dalhousie Biology Graduate Students Meeting"
+  date: "March 17, 2026"
+  location: "Dalhousie University, Halifax, Nova Scotia"
+  image: "soma_biology_symposium.jpg"
+  text: "Soma presented at the 9th Annual Dalhousie Biology Graduate Students Meeting."
+  category: "past"
+  link: "https://events.dal.ca/event/5627-biology-departments-19th-annual-lett-symposium"
