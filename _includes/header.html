@@ -1,6 +1,6 @@
 <style>
 /* =========================
-   CLEAN FLEX NAVBAR FIX
+   NAVBAR FLEX FIX
    ========================= */
 
 .navbar .container-fluid {
@@ -9,14 +9,14 @@
   justify-content: space-between;
 }
 
-/* LEFT: hamburger + brand grouped */
+/* LEFT AREA (hamburger + brand) */
 .navbar-header {
   display: flex;
   align-items: center;
   flex: 1;
 }
 
-/* BRAND */
+/* BRAND STACK (IMPORTANT FIX) */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -24,7 +24,18 @@
   padding: 10px 15px;
 }
 
-/* CENTER/RIGHT NAV */
+/* STACKED TEXT */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-text span {
+  margin: 0;
+}
+
+/* RIGHT NAV */
 .navbar-collapse {
   display: flex !important;
   justify-content: flex-end;
@@ -40,7 +51,7 @@
   margin: 0;
 }
 
-/* OPTIONAL: clean link spacing */
+/* CLEAN LINK SPACING */
 .navbar-nav > li > a {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -69,12 +80,15 @@
       <!-- BRAND -->
       <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">
 
-        <!-- TEXT -->
-        <div class="brand-text" style="line-height:1.1;">
-          <div style="color:black; font-size:14px;">Welcome to</div>
-          <div style="color:rgb(16,158,240); font-weight:600; font-size:16px;">
+        <!-- TEXT STACK -->
+        <div class="brand-text">
+          <span style="color:black; font-size:14px;">
+            Welcome to
+          </span>
+
+          <span style="color:rgb(16,158,240); font-weight:600; font-size:16px;">
             Beiko Lab
-          </div>
+          </span>
         </div>
 
         <!-- LOGO -->
