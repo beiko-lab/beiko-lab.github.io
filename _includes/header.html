@@ -1,72 +1,105 @@
+<style>
+/* =========================
+   CLEAN FLEX NAVBAR FIX
+   ========================= */
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT: hamburger + brand grouped */
+.navbar-header {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* BRAND */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+}
+
+/* CENTER/RIGHT NAV */
+.navbar-collapse {
+  display: flex !important;
+  justify-content: flex-end;
+  flex: 2;
+}
+
+/* REMOVE BOOTSTRAP FLOATS */
+.navbar-nav {
+  float: none !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+/* OPTIONAL: clean link spacing */
+.navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+</style>
+
+
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
- <div class="container-fluid">
+  <div class="container-fluid">
 
+    <!-- HEADER -->
+    <div class="navbar-header">
 
-   <!-- HEADER -->
-   <div class="navbar-header" style="display:flex; align-items:center; width:100%;">
+      <!-- HAMBURGER -->
+      <button type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar-collapse-1"
+              aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
+      <!-- BRAND -->
+      <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">
 
-     <!-- HAMBURGER -->
-     <button type="button"
-             class="navbar-toggle collapsed"
-             data-toggle="collapse"
-             data-target="#navbar-collapse-1"
-             aria-expanded="false">
-       <span class="sr-only">Toggle navigation</span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-     </button>
+        <!-- TEXT -->
+        <div class="brand-text" style="line-height:1.1;">
+          <div style="color:black; font-size:14px;">Welcome to</div>
+          <div style="color:rgb(16,158,240); font-weight:600; font-size:16px;">
+            Beiko Lab
+          </div>
+        </div>
 
+        <!-- LOGO -->
+        <img src="{{ '/images/logo/dalhousie-logo-black.svg' | relative_url }}"
+             alt="Dalhousie University"
+             style="height:40px; width:auto; display:block;">
 
-     <!-- BRAND (TEXT + LOGO INLINE, FIXED) -->
-     <a class="navbar-brand brand-stack"
-        href="{{ site.url }}{{ site.baseurl }}/"
-        style="display:flex; align-items:center; gap:12px; padding:10px 15px;">
+      </a>
 
+    </div>
 
-       <!-- TEXT -->
-       <div class="brand-text" style="line-height:1.1;">
-         <div style="color:black; font-size:14px;">Welcome to</div>
-         <div style="color:rgb(16,158,240); font-weight:600; font-size:16px;">
-           Beiko Lab
-         </div>
-       </div>
+    <!-- NAV -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
 
+      <ul class="nav navbar-nav">
+        <li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/team">Team</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/news">News</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/research">Research</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/software">Software</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/opportunities">Opportunities</a></li>
+      </ul>
 
-       <!-- LOGO -->
-       <img src="{{ '/images/logo/dalhousie-logo-black.svg' | relative_url }}"
-            alt="Dalhousie University"
-            style="height:40px; width:auto; display:block;">
+    </div>
 
-
-     </a>
-
-
-   </div>
-
-
-   <!-- NAV -->
-   <div class="collapse navbar-collapse" id="navbar-collapse-1">
-
-
-     <ul class="nav navbar-nav navbar-right">
-
-
-       <li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
-       <li><a href="{{ site.url }}{{ site.baseurl }}/team">Team</a></li>
-       <li><a href="{{ site.url }}{{ site.baseurl }}/news">News</a></li>
-       <li><a href="{{ site.url }}{{ site.baseurl }}/research">Research</a></li>
-       <li><a href="{{ site.url }}{{ site.baseurl }}/software">Software</a></li>
-       <li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
-       <li><a href="{{ site.url }}{{ site.baseurl }}/opportunities">Opportunities</a></li>
-
-
-     </ul>
-
-
-   </div>
-
-
- </div>
+  </div>
 </div>
