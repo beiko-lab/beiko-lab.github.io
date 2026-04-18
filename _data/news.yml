@@ -14,23 +14,6 @@
   category: "upcoming"
   link: "https://zambi.ca/"
 
-
-- title: "ICG Seminar"
-  date: "April 02, 2026"
-  location: "Dalhousie University, Halifax, Nova Scotia"
-  image: "beiko_icg.png"
-  text: "Rob presents at the ICG Seminar"
-  category: "past"
-  link: "https://icgenomics.ca/"
-
-- title: "ICG Seminar"
-  date: "April 02, 2026"
-  location: "Dalhousie University, Halifax, Nova Scotia"
-  image: "sneha_icg.png"
-  text: "Sneha presents at the ICG Seminar"
-  category: "past"
-  link: "https://icgenomics.ca/"
-
 - title: "Rob Presentation - ICG Seminar"
   date: "April 02, 2026"
   location: "Dalhousie University, Halifax, Nova Scotia"
