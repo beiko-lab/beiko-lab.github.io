@@ -8,20 +8,20 @@
   align-items: center;
 }
 
-/* DO NOT force flex on navbar-header (Bootstrap breaks otherwise) */
+/* DO NOT force flex on navbar-header */
 .navbar-header {
   display: flex;
   align-items: center;
 }
 
-/* BRAND ONLY */
+/* BRAND */
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* TEXT STACK FIX */
+/* TEXT STACK */
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@
   margin: 0;
 }
 
-/* NAV FIX */
+/* NAV ALIGN */
 .navbar-collapse {
   margin-left: auto !important;
 }
@@ -42,10 +42,18 @@
   float: none !important;
 }
 
-/* OPTIONAL: tighten spacing */
-.navbar-nav > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
+/* =========================
+   DROPDOWN ON HOVER
+   ========================= */
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+/* optional: smoother look */
+.dropdown-menu {
+  border-radius: 6px;
 }
 </style>
 
@@ -90,14 +98,26 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
+
         <li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
         <li><a href="{{ site.url }}{{ site.baseurl }}/team">Team</a></li>
         <li><a href="{{ site.url }}{{ site.baseurl }}/news">News</a></li>
         <li><a href="{{ site.url }}{{ site.baseurl }}/research">Research</a></li>
         <li><a href="{{ site.url }}{{ site.baseurl }}/software">Software</a></li>
         <li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
-        <li><a href="{{ site.url }}{{ site.baseurl }}/gallery">Gallery</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/opportunities">Opportunities</a></li>
+
+        <!-- DROPDOWN -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            More <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="{{ site.url }}{{ site.baseurl }}/gallery">Gallery</a></li>
+            <li><a href="{{ site.url }}{{ site.baseurl }}/opportunities">Opportunities</a></li>
+          </ul>
+        </li>
+
       </ul>
 
     </div>
