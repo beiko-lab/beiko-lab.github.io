@@ -2,7 +2,7 @@
   <div class="container-fluid">
 
     <!-- HEADER -->
-    <div class="navbar-header">
+    <div class="navbar-header" style="display:flex; align-items:center; width:100%;">
 
       <!-- HAMBURGER -->
       <button type="button"
@@ -16,17 +16,23 @@
         <span class="icon-bar"></span>
       </button>
 
-      <!-- BRAND (STACKED) -->
-      <a class="navbar-brand brand-stack" href="{{ site.url }}{{ site.baseurl }}/">
+      <!-- BRAND (TEXT + LOGO INLINE, FIXED) -->
+      <a class="navbar-brand brand-stack"
+         href="{{ site.url }}{{ site.baseurl }}/"
+         style="display:flex; align-items:center; gap:12px; padding:10px 15px;">
 
-        <div class="brand-text">
-          <span style="color:black;">Welcome to </span>
-          <span style="color:rgb(16,158,240);">Beiko Lab</span>
+        <!-- TEXT -->
+        <div class="brand-text" style="line-height:1.1;">
+          <div style="color:black; font-size:14px;">Welcome to</div>
+          <div style="color:rgb(16,158,240); font-weight:600; font-size:16px;">
+            Beiko Lab
+          </div>
         </div>
 
+        <!-- LOGO -->
         <img src="{{ '/images/logo/dalhousie-logo-black.svg' | relative_url }}"
              alt="Dalhousie University"
-             class="brand-logo">
+             style="height:40px; width:auto; display:block;">
 
       </a>
 
