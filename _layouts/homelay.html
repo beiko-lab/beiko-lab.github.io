@@ -3,9 +3,20 @@ layout: default
 ---
 
 <style>
-/* =========================
-   HERO IMAGE
-   ========================= */
+
+/* =========================================================
+   FULL-WIDTH RESET (CRITICAL BASE FIX)
+========================================================= */
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* =========================================================
+   HERO IMAGE (FULL WIDTH ALIGNMENT)
+========================================================= */
 .lab-image img {
   width: 100%;
   height: 60vh;
@@ -13,25 +24,24 @@ layout: default
   display: block;
 }
 
-/* =========================
-   CRITICAL FIX: REMOVE BOOTSTRAP OFFSET
-   ========================= */
-.container-fluid {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+/* 📱 MOBILE: show full image */
+@media (max-width: 768px) {
+  .lab-image img {
+    height: auto !important;
+    object-fit: contain !important;
+  }
 }
 
-/* =========================
-   CONTENT ALIGNMENT SYSTEM
-   ========================= */
-
-/* full-width wrapper (same as image) */
+/* =========================================================
+   CONTENT WRAPPER (MATCH IMAGE EDGE EXACTLY)
+========================================================= */
 .content-wrapper {
   width: 100%;
-  padding: 40px 0; /* only vertical spacing */
+  padding: 40px 0;
+  margin: 0;
 }
 
-/* readable text spacing WITHOUT shifting layout */
+/* ONLY INTERNAL TEXT SPACING (NOT LAYOUT SHIFT) */
 .content-wrapper h1,
 .content-wrapper h2,
 .content-wrapper h3,
@@ -39,50 +49,63 @@ layout: default
 .content-wrapper li {
   padding-left: 6%;
   padding-right: 6%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* =========================
-   CAROUSEL
-   ========================= */
+/* =========================================================
+   CAROUSEL (FULL WIDTH)
+========================================================= */
 .carousel-inner .item img {
   width: 100%;
   height: 400px;
   object-fit: cover;
+  display: block;
 }
 
-/* =========================
+/* 📱 MOBILE CAROUSEL FIX */
+@media (max-width: 768px) {
+  .carousel-inner .item img {
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}
+
+/* =========================================================
    BODY RESET
-   ========================= */
+========================================================= */
 body {
   margin: 0;
 }
+
 </style>
 
-<!-- =========================
+<!-- =========================================================
      HERO IMAGE
-========================= -->
+========================================================= -->
 <div class="lab-image">
   <img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}" alt="Beiko Lab Photo">
 </div>
 
-<!-- =========================
-     CONTENT (ALIGNED)
-========================= -->
+<!-- =========================================================
+     CONTENT (ALIGNED WITH IMAGE EDGE)
+========================================================= -->
 <div class="container-fluid">
   <div class="content-wrapper">
     {{ content }}
   </div>
 </div>
 
-<!-- =========================
+<!-- =========================================================
      CAROUSEL
-========================= -->
+========================================================= -->
 <div class="container-fluid">
   <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
 
     <ol class="carousel-indicators">
       {% for file in site.data.slider %}
-      <li data-target="#carousel" data-slide-to="{{ forloop.index0 }}"
+      <li data-target="#carousel"
+          data-slide-to="{{ forloop.index0 }}"
           class="{% if forloop.first %}active{% endif %}">
       </li>
       {% endfor %}
@@ -91,7 +114,8 @@ body {
     <div class="carousel-inner">
       {% for file in site.data.slider %}
       <div class="item {% if forloop.first %}active{% endif %}">
-        <img src="{{ '/images/slider/' | append: file | relative_url }}" alt="Slide {{ forloop.index }}">
+        <img src="{{ '/images/slider/' | append: file | relative_url }}"
+             alt="Slide {{ forloop.index }}">
       </div>
       {% endfor %}
     </div>
