@@ -1,79 +1,84 @@
 <style>
 /* =========================
-   BRAND COLOR SYSTEM
+   BRAND (UNCHANGED)
    ========================= */
 :root {
   --brand-blue: rgb(16,158,240);
 }
 
 /* =========================
-   RESET BOOTSTRAP CONFLICTS
+   BOOTSTRAP SAFE RESET
    ========================= */
-
 .navbar .container-fluid {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-header {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* STACKED TEXT */
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-
-.brand-text span {
-  display: block;
-  margin: 0;
-}
-
-/* NAV ALIGN */
-.navbar-collapse {
-  margin-left: auto !important;
-}
-
-.navbar-nav {
-  float: none !important;
+  display: block; /* DO NOT use flex */
 }
 
 /* =========================
-   ACTIVE LINK FIX (IMPORTANT)
+   HEADER STABILITY
    ========================= */
+.navbar-header {
+  float: none;
+  position: relative;
+}
 
+/* =========================
+   🔥 HAMBURGER TOP RIGHT
+   ========================= */
+.navbar-toggle {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  margin: 0;
+}
+
+/* =========================
+   BRAND LEFT FIXED
+   ========================= */
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* TEXT STACK */
+.brand-text {
+  display: inline-block;
+  line-height: 1.1;
+}
+
+/* =========================
+   COLLAPSE SAFETY
+   ========================= */
+.navbar-collapse {
+  border-top: none;
+  box-shadow: none;
+}
+
+/* MOBILE MENU STYLE */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: #fff;
+  }
+}
+
+/* =========================
+   ACTIVE LINK (UNCHANGED)
+   ========================= */
 .navbar-nav > li.active > a,
-.navbar-nav > li.active > a:focus,
-.navbar-nav > li.active > a:hover {
+.navbar-nav > li.active > a:hover,
+.navbar-nav > li.active > a:focus {
   color: var(--brand-blue) !important;
   font-weight: 600 !important;
   border-bottom: 2px solid var(--brand-blue);
   background: transparent !important;
 }
 
-/* hover links */
 .navbar-nav > li > a:hover {
   color: var(--brand-blue) !important;
 }
 
-/* dropdown hover links */
-.dropdown-menu > li > a:hover {
-  color: var(--brand-blue) !important;
-}
-
 /* =========================
-   DROPDOWN ON HOVER
+   DROPDOWN
    ========================= */
-
 .navbar-nav .dropdown:hover .dropdown-menu {
   display: block;
   margin-top: 0;
@@ -84,11 +89,12 @@
 }
 </style>
 
-
+<!-- =========================
+     NAVBAR STRUCTURE
+========================= -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
 
-    <!-- HEADER -->
     <div class="navbar-header">
 
       <!-- HAMBURGER -->
@@ -118,25 +124,25 @@
 
         <img src="{{ '/images/logo/dalhousie-logo-black.svg' | relative_url }}"
              alt="Dalhousie University"
-             style="height:40px; width:auto;">
+             style="height:40px; width:auto; margin-left:10px;">
 
       </a>
 
     </div>
 
-    <!-- NAV -->
+    <!-- NAV ITEMS (ONLY COLLAPSIBLE PART) -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
 
-        <!-- HOME (ROBUST ACTIVE FIX) -->
-        <li class="{% if page.url == '/' or page.url == '/index.html' or page.url == '/index' %}active{% endif %}">
+        <li class="{% if page.url == '/' %}active{% endif %}">
           <a href="{{ site.url }}{{ site.baseurl }}/">Home</a>
         </li>
 
         <li class="{% if page.url contains 'team' %}active{% endif %}">
           <a href="{{ site.url }}{{ site.baseurl }}/team">Team</a>
         </li>
+
         <li class="{% if page.url contains 'research' %}active{% endif %}">
           <a href="{{ site.url }}{{ site.baseurl }}/research">Research</a>
         </li>
@@ -148,27 +154,20 @@
         <li class="{% if page.url contains 'publications' %}active{% endif %}">
           <a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a>
         </li>
+
         <li class="{% if page.url contains 'news' %}active{% endif %}">
           <a href="{{ site.url }}{{ site.baseurl }}/news">News</a>
         </li>
 
-        <!-- DROPDOWN -->
-        <li class="dropdown {% if page.url contains 'gallery' or page.url contains 'opportunities' %}active{% endif %}">
-
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             More <span class="caret"></span>
           </a>
 
           <ul class="dropdown-menu">
-            <li class="{% if page.url contains 'gallery' %}active{% endif %}">
-              <a href="{{ site.url }}{{ site.baseurl }}/gallery">Gallery</a>
-            </li>
-
-            <li class="{% if page.url contains 'opportunities' %}active{% endif %}">
-              <a href="{{ site.url }}{{ site.baseurl }}/opportunities">Opportunities</a>
-            </li>
+            <li><a href="{{ site.url }}{{ site.baseurl }}/gallery">Gallery</a></li>
+            <li><a href="{{ site.url }}{{ site.baseurl }}/opportunities">Opportunities</a></li>
           </ul>
-
         </li>
 
       </ul>
