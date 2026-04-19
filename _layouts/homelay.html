@@ -1,133 +1,110 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-<style>
-/* =========================
-   RESET ISSUES
-   ========================= */
+  <!-- REQUIRED FOR MOBILE SCREEN-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* DO NOT override Bootstrap globally */
-body {
-  margin: 0;
-}
+  <title>{{ page.title }}</title>
 
-/* =========================
-   HERO IMAGE (FIXED)
-   ========================= */
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-.lab-image img {
-  width: 100%;
-  height: 60vh;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-/* Mobile fix: reduce cropping */
-@media (max-width: 768px) {
-  .lab-image img {
-    height: 35vh;          /* less aggressive crop */
-    object-position: top;  /* keeps faces visible */
+  <style>
+  /* =========================
+     GLOBAL FIXES
+     ========================= */
+  body {
+    margin: 0;
+    padding-top: 70px; /* space for fixed navbar */
   }
-}
 
-/* =========================
-   FULL WIDTH WITHOUT BREAKING NAVBAR
-   ========================= */
+  /* =========================
+     NAVBAR (STABLE)
+     ========================= */
+  .navbar {
+    margin-bottom: 0;
+    border: none;
+  }
 
-.full-width-section {
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
+  .navbar-brand img {
+    height: 40px;
+    display: inline-block;
+  }
 
-.content-wrapper {
-  width: 100%;
-  padding: 40px 6%;
-}
+  .navbar-text {
+    margin-left: 10px;
+    font-weight: 500;
+  }
 
-/* =========================
-   CAROUSEL FIX
-   ========================= */
-
-.carousel-inner .item img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-
-/* =========================
-   NAVBAR STABILITY FIX
-   ========================= */
-
-/* Prevent jump when menu opens */
-.navbar {
-  margin-bottom: 0;
-}
-
-/* Fix collapse spacing */
-.navbar-collapse {
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-/* Optional: smoother mobile dropdown */
-@media (max-width: 768px) {
+  /* Prevent weird expansion issues */
   .navbar-collapse {
-    background: white;
+    max-height: 80vh;
+    overflow-y: auto;
   }
-}
-</style>
+
+  /* Mobile tweaks */
+  @media (max-width: 768px) {
+    .navbar-text {
+      display: none; /* avoids crowding */
+    }
+
+    .navbar-collapse {
+      background: #fff;
+    }
+  }
+  </style>
+</head>
+
+<body>
 
 <!-- =========================
-     HERO IMAGE
+     NAVBAR (CORRECT STRUCTURE)
 ========================= -->
-<div class="lab-image">
-  <img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}" alt="Beiko Lab Photo">
-</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
 
-<!-- =========================
-     CONTENT
-========================= -->
-<div class="container-fluid full-width-section">
-  <div class="content-wrapper">
-    {{ content }}
-  </div>
-</div>
+    <div class="navbar-header">
 
-<!-- =========================
-     CAROUSEL
-========================= -->
-<div class="container-fluid full-width-section">
-  <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+      <!-- Hamburger -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      {% for file in site.data.slider %}
-      <li data-target="#carousel" data-slide-to="{{ forloop.index0 }}"
-          class="{% if forloop.first %}active{% endif %}">
-      </li>
-      {% endfor %}
-    </ol>
+      <!-- Logo -->
+      <a class="navbar-brand" href="/">
+        <img src="/images/logo.png" alt="Logo">
+      </a>
 
-    <!-- Slides -->
-    <div class="carousel-inner">
-      {% for file in site.data.slider %}
-      <div class="item {% if forloop.first %}active{% endif %}">
-        <img src="{{ '/images/slider/' | append: file | relative_url }}"
-             alt="Slide {{ forloop.index }}">
-      </div>
-      {% endfor %}
+      <!-- Always visible text -->
+      <span class="navbar-text">Welcome to Beiko Lab</span>
+
     </div>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
+    <!-- ONLY THIS COLLAPSES -->
+    <div class="collapse navbar-collapse" id="nav-menu">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+      </ul>
+    </div>
 
   </div>
-</div>
+</nav>
+
+<!-- =========================
+     PAGE CONTENT
+========================= -->
+{{ content }}
+
+</body>
+</html>
