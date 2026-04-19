@@ -1,110 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+---
+layout: default
+---
 
-  <!-- REQUIRED FOR MOBILE SCREEN-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* =========================
+   HERO IMAGE
+   ========================= */
+.lab-image img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
 
-  <title>{{ page.title }}</title>
+/* =========================
+   FIX 1: NAVBAR SHIFT BUG
+   ========================= */
+/* IMPORTANT: DO NOT globally zero out Bootstrap padding */
+.container-fluid {
+  /* only apply inside your sections if needed */
+}
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+/* =========================
+   FIX 2: ALIGN CONTENT WITH IMAGE
+   ========================= */
+.content-wrapper {
+  width: 100%;
+  padding: 40px 0;   /* 👈 FIXED (removes left/right mismatch) */
+}
 
-  <!-- jQuery + Bootstrap JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+/* keep readable spacing INSIDE content only */
+.content-wrapper > * {
+  padding-left: 6%;
+  padding-right: 6%;
+}
 
-  <style>
-  /* =========================
-     GLOBAL FIXES
-     ========================= */
-  body {
-    margin: 0;
-    padding-top: 70px; /* space for fixed navbar */
-  }
+/* =========================
+   CAROUSEL
+   ========================= */
+.carousel-inner .item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
 
-  /* =========================
-     NAVBAR (STABLE)
-     ========================= */
-  .navbar {
-    margin-bottom: 0;
-    border: none;
-  }
-
-  .navbar-brand img {
-    height: 40px;
-    display: inline-block;
-  }
-
-  .navbar-text {
-    margin-left: 10px;
-    font-weight: 500;
-  }
-
-  /* Prevent weird expansion issues */
-  .navbar-collapse {
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-
-  /* Mobile tweaks */
-  @media (max-width: 768px) {
-    .navbar-text {
-      display: none; /* avoids crowding */
-    }
-
-    .navbar-collapse {
-      background: #fff;
-    }
-  }
-  </style>
-</head>
-
-<body>
+/* =========================
+   BODY RESET
+   ========================= */
+body {
+  margin: 0;
+}
+</style>
 
 <!-- =========================
-     NAVBAR (CORRECT STRUCTURE)
+     HERO IMAGE
 ========================= -->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
+<div class="lab-image">
+  <img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}" alt="Beiko Lab Photo">
+</div>
 
-    <div class="navbar-header">
+<!-- =========================
+     CONTENT (ALIGNED WITH IMAGE)
+========================= -->
+<div class="container-fluid">
+  <div class="content-wrapper">
+    {{ content }}
+  </div>
+</div>
 
-      <!-- Hamburger -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+<!-- =========================
+     CAROUSEL
+========================= -->
+<div class="container-fluid">
+  <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
 
-      <!-- Logo -->
-      <a class="navbar-brand" href="/">
-        <img src="/images/logo.png" alt="Logo">
-      </a>
+    <ol class="carousel-indicators">
+      {% for file in site.data.slider %}
+      <li data-target="#carousel" data-slide-to="{{ forloop.index0 }}"
+          class="{% if forloop.first %}active{% endif %}">
+      </li>
+      {% endfor %}
+    </ol>
 
-      <!-- Always visible text -->
-      <span class="navbar-text">Welcome to Beiko Lab</span>
-
+    <div class="carousel-inner">
+      {% for file in site.data.slider %}
+      <div class="item {% if forloop.first %}active{% endif %}">
+        <img src="{{ '/images/slider/' | append: file | relative_url }}" alt="Slide {{ forloop.index }}">
+      </div>
+      {% endfor %}
     </div>
 
-    <!-- ONLY THIS COLLAPSES -->
-    <div class="collapse navbar-collapse" id="nav-menu">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">Home</a></li>
-        <li><a href="/team">Team</a></li>
-        <li><a href="/research">Research</a></li>
-        <li><a href="/publications">Publications</a></li>
-      </ul>
-    </div>
+    <a class="left carousel-control" href="#carousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+
+    <a class="right carousel-control" href="#carousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
 
   </div>
-</nav>
-
-<!-- =========================
-     PAGE CONTENT
-========================= -->
-{{ content }}
-
-</body>
-</html>
+</div>
