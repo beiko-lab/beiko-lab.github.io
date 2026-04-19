@@ -3,69 +3,125 @@ layout: default
 ---
 
 <style>
-/* Hero image */
+/* =========================
+   RESET ISSUES
+   ========================= */
+
+/* DO NOT override Bootstrap globally */
+body {
+  margin: 0;
+}
+
+/* =========================
+   HERO IMAGE (FIXED)
+   ========================= */
+
 .lab-image img {
   width: 100%;
   height: 60vh;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-/* Remove container padding for full width */
-.container-fluid {
+/* Mobile fix: reduce cropping */
+@media (max-width: 768px) {
+  .lab-image img {
+    height: 35vh;          /* less aggressive crop */
+    object-position: top;  /* keeps faces visible */
+  }
+}
+
+/* =========================
+   FULL WIDTH WITHOUT BREAKING NAVBAR
+   ========================= */
+
+.full-width-section {
+  width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
 
-/* Full-width content */
 .content-wrapper {
   width: 100%;
   padding: 40px 6%;
 }
 
-/* Carousel images */
+/* =========================
+   CAROUSEL FIX
+   ========================= */
+
 .carousel-inner .item img {
   width: 100%;
   height: 400px;
   object-fit: cover;
 }
 
-/* Remove default body margin */
-body {
-  margin: 0;
+/* =========================
+   NAVBAR STABILITY FIX
+   ========================= */
+
+/* Prevent jump when menu opens */
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Fix collapse spacing */
+.navbar-collapse {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Optional: smoother mobile dropdown */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: white;
+  }
 }
 </style>
 
-<!-- Lab image -->
+<!-- =========================
+     HERO IMAGE
+========================= -->
 <div class="lab-image">
   <img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}" alt="Beiko Lab Photo">
 </div>
 
-<!-- Full-width content -->
-<div class="container-fluid">
+<!-- =========================
+     CONTENT
+========================= -->
+<div class="container-fluid full-width-section">
   <div class="content-wrapper">
     {{ content }}
   </div>
 </div>
 
-<!-- Carousel -->
-<div class="container-fluid">
+<!-- =========================
+     CAROUSEL
+========================= -->
+<div class="container-fluid full-width-section">
   <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
 
+    <!-- Indicators -->
     <ol class="carousel-indicators">
       {% for file in site.data.slider %}
-      <li data-target="#carousel" data-slide-to="{{ forloop.index0 }}" class="{% if forloop.first %}active{% endif %}"></li>
+      <li data-target="#carousel" data-slide-to="{{ forloop.index0 }}"
+          class="{% if forloop.first %}active{% endif %}">
+      </li>
       {% endfor %}
     </ol>
 
+    <!-- Slides -->
     <div class="carousel-inner">
       {% for file in site.data.slider %}
       <div class="item {% if forloop.first %}active{% endif %}">
-        <img src="{{ '/images/slider/' | append: file | relative_url }}" alt="Slide {{ forloop.index }}">
+        <img src="{{ '/images/slider/' | append: file | relative_url }}"
+             alt="Slide {{ forloop.index }}">
       </div>
       {% endfor %}
     </div>
 
+    <!-- Controls -->
     <a class="left carousel-control" href="#carousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
