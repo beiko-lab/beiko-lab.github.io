@@ -4,19 +4,9 @@ layout: default
 
 <style>
 
-/* =========================================================
-   FULL-WIDTH RESET (CRITICAL BASE FIX)
-========================================================= */
-.container-fluid {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* =========================================================
-   HERO IMAGE (FULL WIDTH ALIGNMENT)
-========================================================= */
+/* =========================
+   HERO IMAGE
+   ========================= */
 .lab-image img {
   width: 100%;
   height: 60vh;
@@ -24,24 +14,28 @@ layout: default
   display: block;
 }
 
-/* 📱 MOBILE: show full image */
+/* 📱 MOBILE FIX → show full image */
 @media (max-width: 768px) {
   .lab-image img {
     height: auto !important;
+    max-height: none;
     object-fit: contain !important;
   }
 }
 
-/* =========================================================
-   CONTENT WRAPPER (MATCH IMAGE EDGE EXACTLY)
-========================================================= */
+/* =========================
+   CONTENT ALIGNMENT (UNCHANGED FIX)
+   ========================= */
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .content-wrapper {
   width: 100%;
   padding: 40px 0;
-  margin: 0;
 }
 
-/* ONLY INTERNAL TEXT SPACING (NOT LAYOUT SHIFT) */
 .content-wrapper h1,
 .content-wrapper h2,
 .content-wrapper h3,
@@ -49,13 +43,11 @@ layout: default
 .content-wrapper li {
   padding-left: 6%;
   padding-right: 6%;
-  margin-left: 0;
-  margin-right: 0;
 }
 
-/* =========================================================
-   CAROUSEL (FULL WIDTH)
-========================================================= */
+/* =========================
+   CAROUSEL
+   ========================= */
 .carousel-inner .item img {
   width: 100%;
   height: 400px;
@@ -68,37 +60,38 @@ layout: default
   .carousel-inner .item img {
     height: auto !important;
     object-fit: contain !important;
+    max-height: none;
   }
 }
 
-/* =========================================================
+/* =========================
    BODY RESET
-========================================================= */
+   ========================= */
 body {
   margin: 0;
 }
 
 </style>
 
-<!-- =========================================================
+<!-- =========================
      HERO IMAGE
-========================================================= -->
+========================= -->
 <div class="lab-image">
   <img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}" alt="Beiko Lab Photo">
 </div>
 
-<!-- =========================================================
-     CONTENT (ALIGNED WITH IMAGE EDGE)
-========================================================= -->
+<!-- =========================
+     CONTENT
+========================= -->
 <div class="container-fluid">
   <div class="content-wrapper">
     {{ content }}
   </div>
 </div>
 
-<!-- =========================================================
+<!-- =========================
      CAROUSEL
-========================================================= -->
+========================= -->
 <div class="container-fluid">
   <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
 
