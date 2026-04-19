@@ -14,23 +14,29 @@ layout: default
 }
 
 /* =========================
-   FIX 1: NAVBAR SHIFT BUG
+   CRITICAL FIX: REMOVE BOOTSTRAP OFFSET
    ========================= */
-/* IMPORTANT: DO NOT globally zero out Bootstrap padding */
 .container-fluid {
-  /* only apply inside your sections if needed */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* =========================
-   FIX 2: ALIGN CONTENT WITH IMAGE
+   CONTENT ALIGNMENT SYSTEM
    ========================= */
+
+/* full-width wrapper (same as image) */
 .content-wrapper {
   width: 100%;
-  padding: 40px 0;   /* 👈 FIXED (removes left/right mismatch) */
+  padding: 40px 0; /* only vertical spacing */
 }
 
-/* keep readable spacing INSIDE content only */
-.content-wrapper > * {
+/* readable text spacing WITHOUT shifting layout */
+.content-wrapper h1,
+.content-wrapper h2,
+.content-wrapper h3,
+.content-wrapper p,
+.content-wrapper li {
   padding-left: 6%;
   padding-right: 6%;
 }
@@ -60,7 +66,7 @@ body {
 </div>
 
 <!-- =========================
-     CONTENT (ALIGNED WITH IMAGE)
+     CONTENT (ALIGNED)
 ========================= -->
 <div class="container-fluid">
   <div class="content-wrapper">
