@@ -10,49 +10,67 @@ layout: default
 
 .lab-image {
   width: 100%;
-  overflow: hidden;
+  text-align: center;
+  background: #000; /* optional */
 }
 
 .lab-image img {
   width: 100%;
-  
-  /* responsive height */
-  height: clamp(320px, 60vh, 750px);
+  height: auto;
+  display: block;
 
+  /* keeps FULL image visible */
+  object-fit: contain;
+}
+
+/* =========================
+   CONTENT ALIGNMENT
+   ========================= */
+
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.content-wrapper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.content-wrapper h1,
+.content-wrapper h2,
+.content-wrapper h3,
+.content-wrapper p,
+.content-wrapper li {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* =========================
+   CAROUSEL
+   ========================= */
+
+.carousel-inner .item img {
+  width: 100%;
+  height: 400px;
   object-fit: cover;
-
-  /* move focus upward so heads are not cropped */
-  object-position: center 20%;
-
   display: block;
 }
 
-/* Short laptop screens */
-@media (max-height: 700px) {
-  .lab-image img {
-    height: 50vh;
-    object-position: center 15%;
-  }
-}
+/* 📱 MOBILE CAROUSEL FIX */
 
-/* Very wide screens */
-@media (min-width: 1600px) {
-  .lab-image img {
-    height: 65vh;
-  }
-}
-
-/* Mobile */
 @media (max-width: 768px) {
-  .lab-image img {
-    height: auto;
+  .carousel-inner .item img {
+    height: auto !important;
+    object-fit: contain !important;
     max-height: none;
-    object-fit: contain;
   }
 }
+
 /* =========================
    BODY RESET
    ========================= */
+
 body {
   margin: 0;
 }
@@ -62,13 +80,16 @@ body {
 <!-- =========================
      HERO IMAGE
 ========================= -->
+
 <div class="lab-image">
-  <img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}" alt="Beiko Lab Photo">
+  <img src="{{ '/images/gallery/beiko_lab_photo.jpg' | relative_url }}"
+       alt="Beiko Lab Photo">
 </div>
 
 <!-- =========================
      CONTENT
 ========================= -->
+
 <div class="container-fluid">
   <div class="content-wrapper">
     {{ content }}
@@ -78,9 +99,15 @@ body {
 <!-- =========================
      CAROUSEL
 ========================= -->
-<div class="container-fluid">
-  <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
 
+<div class="container-fluid">
+
+  <div id="carousel"
+       class="carousel slide"
+       data-ride="carousel"
+       data-interval="5000">
+
+    <!-- Indicators -->
     <ol class="carousel-indicators">
       {% for file in site.data.slider %}
       <li data-target="#carousel"
@@ -90,6 +117,7 @@ body {
       {% endfor %}
     </ol>
 
+    <!-- Slides -->
     <div class="carousel-inner">
       {% for file in site.data.slider %}
       <div class="item {% if forloop.first %}active{% endif %}">
@@ -99,13 +127,19 @@ body {
       {% endfor %}
     </div>
 
-    <a class="left carousel-control" href="#carousel" data-slide="prev">
+    <!-- Controls -->
+    <a class="left carousel-control"
+       href="#carousel"
+       data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
 
-    <a class="right carousel-control" href="#carousel" data-slide="next">
+    <a class="right carousel-control"
+       href="#carousel"
+       data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
 
   </div>
+
 </div>
