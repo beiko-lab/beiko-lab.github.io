@@ -7,63 +7,49 @@ layout: default
 /* =========================
    HERO IMAGE
    ========================= */
+
+.lab-image {
+  width: 100%;
+  overflow: hidden;
+}
+
 .lab-image img {
   width: 100%;
-  height: 60vh;
+  
+  /* responsive height */
+  height: clamp(320px, 60vh, 750px);
+
   object-fit: cover;
+
+  /* move focus upward so heads are not cropped */
+  object-position: center 20%;
+
   display: block;
 }
 
-/* 📱 MOBILE FIX → show full image */
+/* Short laptop screens */
+@media (max-height: 700px) {
+  .lab-image img {
+    height: 50vh;
+    object-position: center 15%;
+  }
+}
+
+/* Very wide screens */
+@media (min-width: 1600px) {
+  .lab-image img {
+    height: 65vh;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .lab-image img {
-    height: auto !important;
+    height: auto;
     max-height: none;
-    object-fit: contain !important;
+    object-fit: contain;
   }
 }
-
-/* =========================
-   CONTENT ALIGNMENT (UNCHANGED FIX)
-   ========================= */
-.container-fluid {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.content-wrapper {
-  width: 100%;
-  padding: 40px 0;
-}
-
-.content-wrapper h1,
-.content-wrapper h2,
-.content-wrapper h3,
-.content-wrapper p,
-.content-wrapper li {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* =========================
-   CAROUSEL
-   ========================= */
-.carousel-inner .item img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  display: block;
-}
-
-/* 📱 MOBILE CAROUSEL FIX */
-@media (max-width: 768px) {
-  .carousel-inner .item img {
-    height: auto !important;
-    object-fit: contain !important;
-    max-height: none;
-  }
-}
-
 /* =========================
    BODY RESET
    ========================= */
