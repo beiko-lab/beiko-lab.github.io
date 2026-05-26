@@ -14,6 +14,14 @@
   category: "upcoming"
   link: "https://zambi.ca/"
 
+- title: "Jason Presentation - Biochemistry Department Seminar"
+  date: "May 25, 2026"
+  location: "Dalhousie University, Halifax, Nova Scotia"
+  image: "jason_presentation.jpg"
+  text: "Jason presents at the Biochemistry Department Seminar"
+  category: "past"
+  link: "https://medicine.dal.ca/departments/department-sites/biochemistry-molecular-biology/news-events/seminars/archive2026.html"
+
 - title: "Rob Presentation - ICG Seminar"
   date: "April 02, 2026"
   location: "Dalhousie University, Halifax, Nova Scotia"
