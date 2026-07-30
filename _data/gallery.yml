@@ -18,31 +18,6 @@
   image: "20220926_185004.jpg"
   text: "Lab social dinner"
 
-
-- year: "Other photos of some of our previous lab members and other colleagues"
-  image: "20220517_192903_HDR.jpg"
-  text: ""
-
-- year: "Other photos of some of our previous lab members and and other colleagues"
-  image: "A3FT1671.JPG"
-  text: ""
-
-- year: "Other photos of some of our previous lab members and other colleagues"
-  image: "CIMG0353.JPG"
-  text: ""
-
-- year: "Other photos of some of our previous lab members and other colleagues"
-  image: "DSC02208.JPG"
-  text: ""
-
-- year: "Other photos of some of our previous lab members and other colleagues"
-  image: "DSC02213.JPG"
-  text: ""
-
-- year: "Other photos of some of our previous lab members and other colleagues"
-  image: "  DSC03077.JPG"
-  text: ""
-
 - year: "2013"
   image: "2013_LM-300x168.jpg"
   text: "Foreground: projector, laptop. Background: class of (November) 2013"
@@ -69,6 +44,32 @@
 - year: "2013"
   image: "Alex-300x225.jpg"
   text: "Alex demonstrates proper technique."
+
+
+- year: "Other photos of some of our previous lab members and other colleagues"
+  image: "20220517_192903_HDR.jpg"
+  text: ""
+
+- year: "Other photos of some of our previous lab members and  other colleagues"
+  image: "A3FT1671.JPG"
+  text: ""
+
+- year: "Other photos of some of our previous lab members and other colleagues"
+  image: "CIMG0353.JPG"
+  text: ""
+
+- year: "Other photos of some of our previous lab members and other colleagues"
+  image: "DSC02208.JPG"
+  text: ""
+
+- year: "Other photos of some of our previous lab members and other colleagues"
+  image: "DSC02213.JPG"
+  text: ""
+
+- year: "Other photos of some of our previous lab members and other colleagues"
+  image: "  DSC03077.JPG"
+  text: ""
+
 
 
 
