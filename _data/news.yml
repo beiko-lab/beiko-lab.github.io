@@ -19,12 +19,12 @@
   category: "past"
   link: "https://microbiome-anchor.ca/#registration"
 
-- title: "Soma poster presentation - Microbiome Anchor Conference"
-  date: "June 8-10, 2026"
-  location: "Oak Island Resort, Western Shore, Nova Scotia"
-  image: "soma_anchor.png"
-  category: "past"
-  link: "https://microbiome-anchor.ca/#registration"
+# - title: "Soma poster presentation - Microbiome Anchor Conference"
+#   date: "June 8-10, 2026"
+#   location: "Oak Island Resort, Western Shore, Nova Scotia"
+#   image: "soma_anchor.png"
+#   category: "past"
+#   link: "https://microbiome-anchor.ca/#registration"
 
 - title: "Bonface poster presentation - Microbiome Anchor Conference"
   date: "June 8-10, 2026"
