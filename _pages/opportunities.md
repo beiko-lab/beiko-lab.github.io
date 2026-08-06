@@ -5,6 +5,7 @@ excerpt: "Opportunities"
 sitemap: false
 permalink: /opportunities
 ---
+# Opportunities
 
 **Postdoctoral Fellowship (Dalhousie University) \- AI Resources for Environmental DNA**
 
