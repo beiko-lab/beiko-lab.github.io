@@ -3,7 +3,7 @@ layout: member
 category: student
 title: Jason Shao
 image: researcher.png
-role: PhD Student
+role: PhD Candidate
 permalink: 'team/jason'
 social:
     twitter: https://twitter.com/
