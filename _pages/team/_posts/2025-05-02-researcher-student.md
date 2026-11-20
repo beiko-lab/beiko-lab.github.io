@@ -3,7 +3,7 @@ layout: member
 category: student
 title: Sneha Surya Narayana Murthy
 image: sneha.png
-role: PhD Candidate
+role: PhD Student
 permalink: 'team/sneha'
 social:
     twitter: https://twitter.com/
