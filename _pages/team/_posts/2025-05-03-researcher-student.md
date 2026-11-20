@@ -3,7 +3,7 @@ layout: member
 category: student
 title: Mohamed Fares
 image: researcher.png
-role: PhD Student
+role: PhD Candidate
 permalink: 'team/mohamed'
 social:
     twitter: https://twitter.com/
